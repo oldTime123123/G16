@@ -1,0 +1,280 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+ul,
+ol li {
+	list-style: none;
+}
+
+@for $i from 1 to 100 {
+	.mgtb#{$i} {
+		margin-top: #{$i}rpx;
+		margin-bottom: #{$i}rpx;
+	}
+	.mglr#{$i} {
+		margin-left: #{$i}rpx;
+		margin-right: #{$i}rpx;
+	}
+
+	.pdtb#{$i} {
+		padding-top: #{$i}rpx;
+		padding-bottom: #{$i}rpx;
+	}
+
+	.pdlr#{$i} {
+		padding-left: #{$i}rpx;
+		padding-right: #{$i}rpx;
+	}
+
+	.mt#{$i} {
+		margin-top: #{$i}rpx;
+	}
+
+	.pt#{$i} {
+		padding-top: #{$i}rpx;
+	}
+
+	.ml#{$i} {
+		margin-left: #{$i}rpx;
+	}
+
+	.pl#{$i} {
+		padding-left: #{$i}rpx;
+	}
+
+	.mb#{$i} {
+		margin-bottom: #{$i}rpx;
+	}
+
+	.pb#{$i} {
+		padding-bottom: #{$i}rpx;
+	}
+
+	.mr#{$i} {
+		margin-right: #{$i}rpx;
+	}
+
+	.pr#{$i} {
+		padding-right: #{$i}rpx;
+	}
+
+	.ww#{$i} {
+		width: #{$i}#{'%'};
+	}
+
+	.hh#{$i} {
+		height: #{$i}#{'%'};
+	}
+
+	.bbo#{$i} {
+		border-radius: #{$i}rpx;
+	}
+
+	.f#{$i} {
+		font-size: #{$i}rpx;
+	}
+}
+
+.text_bold {
+	font-weight: bold;
+}
+
+.text_center {
+	text-align: center;
+	line-height: 100%;
+}
+
+// 布局
+.flex {
+	display: flex;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+//
+.row_center {
+	justify-content: center;
+}
+
+.col_center {
+	align-items: center;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.around {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.flex_col {
+	flex-direction: column;
+}
+// 单行隐藏
+.textHiddenOne {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.textHidden {
+	// 多行隐藏
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.borderB {
+	border-bottom: 1rpx solid;
+}
+.borderT {
+	border-top: 1rpx solid;
+}
+.borderL {
+	border-left: 1rpx solid;
+}
+.borderR {
+	border-right: 1rpx solid;
+}
+.loginBox{
+	background: #fff;
+	border-radius: 20rpx;
+	padding: 20rpx 70rpx 120rpx 70rpx;
+	.uni-input-input{
+		color: #000;
+	}
+	.logoIcon{
+		margin-top:-200rpx;
+	}
+	color: #000;
+	
+}
+	.loginBtn {
+		margin: -50rpx auto 0;
+		width: 60%;
+		text-align: center;
+		height: 120rpx;
+		border-radius: 60rpx;
+		line-height: 120rpx;
+		transition: .3s linear all;
+	}
+	.color0{
+		color: #000;
+	}
+	.contentBtn{
+		background: linear-gradient( 270deg, #FFE030 0%, #FF710F 100%);
+		text-align: center;
+		color: #fff;
+		border-radius: 50rpx;
+		padding: 5rpx 0;
+	}
+	.colorfff{
+		color: #fff;
+	}
+	
+	
+	.listItem {
+		background: #fff;
+		border-radius: 20rpx;
+		padding :30rpx 45rpx 34rpx 45rpx;
+		margin: 30rpx auto;
+		font-size: 28rpx;
+		width: 600rpx;
+		color: #000;
+	
+		.vvItem {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 29rpx;
+		}
+	
+		.pass {
+			color: #5db760;
+		}
+	
+		.error {
+			color: #f5564b;
+		}
+	
+		.cancel {
+			color: #afafaf;
+		}
+	}
+	
+	.confirmPopWarper {
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		padding: 0 50rpx;
+	
+		.content {
+			margin-top: 400rpx;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			height: 350rpx;
+			background: #FFF8F2;
+			color: #000;
+			border-radius: 30rpx;
+			// justify-content: center;
+			padding-top: 50rpx;
+			position: relative;
+			overflow: hidden;
+	
+			.between {
+				position: absolute;
+				bottom: 0;
+				width: calc(100% - 80rpx);
+				padding: 0 30rpx 40rpx;
+	
+				view {
+					width: 48%;
+					height: 100rpx;
+					text-align: center;
+					line-height: 100rpx;
+					font-size: 30rpx;
+					border-radius: 20rpx
+				}
+				.cancelBtn{
+					color: #fff;
+					background: #ccc;
+				}
+				.confirmBtn{
+					background: linear-gradient( 270deg, #FFE030 0%, #FF710F 100%);
+					color: #fff;
+				}
+			}
+		}
+	}
+	.flex1{
+		flex: 1;
+	}
+	.contentBtn{
+		height: 44px;
+		background: linear-gradient( 270deg, #FFE030 0%, #FF710F 100%);
+		border-radius: 22px 22px 22px 22px;
+		line-height: 44px;
+		text-align: center;
+		color: #fff;
+		font-size: 40rpx;
+	}
