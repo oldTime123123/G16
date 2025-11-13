@@ -21,6 +21,7 @@
 
 		mixins: [pageAnimation],
 		onLaunch: function() {
+			setupH5Watcher();
 			Locale.use('en-US', enUS);
 		},
 		onShow: function() {
@@ -36,6 +37,7 @@
 			
 			let locked = false
 			const handleH5UrlChange = e => {
+				console.log(e);
 				if(locked) return 
 				if (import.meta.env.MODE == 'production') {
 					locked = true

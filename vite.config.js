@@ -52,9 +52,7 @@ export default defineConfig({
 			},
 		},
 	},
-	server:{
-		port:'3322'
-	},
+
 	lintOnSave: true,
 	css: {
 		loaderOptions: {
