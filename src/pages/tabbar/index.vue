@@ -42,26 +42,26 @@
 				<view class="lgImg flex col_center" @click="goArtcle(3)">
 					<view class="between">
 						<view>
-							<view class="name">Company</view>
-							<view class="label mt10">Best Global Marketing Agency</view>
+							<view class="name">{{t('x.i_d1')}}</view>
+							<view class="label mt10">{{t('x.i_d2')}}</view>
 						</view>
 
 						<view>
 							<image src="/static/themeNum1/icon/i_r.png" mode="widthFix"
-								style="width: 60rpx;height: 40rpx;"></image>
+								style="width: 60rpx;"></image>
 						</view>
 					</view>
 				</view>
 				<view class="lgImg flex col_center" @click="changePage(1,'../mine/notice')">
 					<view class="between">
 						<view>
-							<view class="name">Public</view>
-							<view class="label mt10">XXXXX</view>
+							<view class="name">{{t('x.i_d3')}}</view>
+							<view class="label mt10">{{t('x.i_d2')}}</view>
 						</view>
 
 						<view>
 							<image src="/static/themeNum1/icon/i_r.png" mode="widthFix"
-								style="width: 60rpx;height: 40rpx;"></image>
+								style="width: 60rpx;"></image>
 						</view>
 					</view>
 				</view>
@@ -109,7 +109,7 @@
 								<view class="mt10 f28 text_bold">{{ item.bonus + ' ' + currency }}</view>
 							</view>
 							<view class="descItem text_center">
-								<view> {{ $t('x.a5') + ' ' + item.dayProfit + currency }}
+								<view> {{ $t('x.a5') + ' ' + item.dayProfit + currency }}.
 									{{ $t('x.a6') + ' ' + item.show_day + ' ' + $t('x.a7') }}
 								</view>
 							</view>
@@ -546,7 +546,7 @@
 		border-bottom: 1px dashed #ccc;
 
 		.value {
-			color: #E7201F;
+			color: #FF7C35;
 			font-size: 32rpx;
 			font-weight: bold;
 		}

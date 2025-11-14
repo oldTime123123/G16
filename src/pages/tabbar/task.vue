@@ -287,7 +287,7 @@ const methods = {
 			}
 
 			.mainTextColor {
-				color: #E7201F;
+				color: #FF7C35;
 				font-weight: bold;
 				font-size: 34rpx;
 			}
@@ -372,7 +372,7 @@ const methods = {
 			}
 
 			.mainTextColor {
-				color: #E7201F;
+				color: #FF7C35;
 			}
 
 			.tag1 {
@@ -384,8 +384,8 @@ const methods = {
 			}
 
 			.tag2 {
-				color: #E7201F;
-				border: 1px solid #E7201F;
+				color: #FF7C35;
+				border: 1px solid #FF7C35;
 				border-radius: 4px;
 				padding: 3rpx 5rpx;
 				font-size: 24rpx;

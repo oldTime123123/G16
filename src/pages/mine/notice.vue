@@ -18,11 +18,11 @@
 					<view class="">
 						<view>
 							<nut-badge dot top="4" right="4" v-if="item.status ==0">
-								<image :src="store.$state.imgObj.noticeP" mode="widthFix"
+								<image src="/static/notice.png" mode="widthFix"
 									style="width: 78rpx;height: 78rpx;"></image>
 							</nut-badge>
 
-							<image :src="store.$state.imgObj.noticeP" v-else mode="widthFix"
+							<image src="/static/notice.png" v-else mode="widthFix"
 								style="width: 78rpx;height: 78rpx;"></image>
 						</view>
 					</view>

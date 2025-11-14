@@ -228,7 +228,7 @@
 	}
 
 	.sea {
-		background: linear-gradient(270deg, #B20100 0%, #E7201F 100%);
+		background: linear-gradient(270deg, #B20100 0%, #FF7C35 100%);
 
 	}
 

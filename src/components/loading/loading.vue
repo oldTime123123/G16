@@ -201,7 +201,7 @@
 
 	@keyframes fadeG {
 		0% {
-			background-color: #E6201F;
+			background-color: #FFE030;
 		}
 
 		100% {
@@ -211,7 +211,7 @@
 
 	@-o-keyframes fadeG {
 		0% {
-			background-color: #E6201F;
+			background-color: #FFE030;
 		}
 
 		100% {
@@ -221,7 +221,7 @@
 
 	@-ms-keyframes fadeG {
 		0% {
-			background-color: #E6201F;
+			background-color: #FFE030;
 		}
 
 		100% {
@@ -231,7 +231,7 @@
 
 	@-webkit-keyframes fadeG {
 		0% {
-			background-color: #E6201F;
+			background-color: #FFE030;
 		}
 
 		100% {
@@ -241,7 +241,7 @@
 
 	@-moz-keyframes fadeG {
 		0% {
-			background-color: #E6201F;
+			background-color: #FFE030;
 		}
 
 		100% {

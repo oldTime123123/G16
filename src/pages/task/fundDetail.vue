@@ -86,6 +86,7 @@
 		
 		<view style="height: 100rpx;"></view>
 		</view>
+		<Loading ref="showLoading"></Loading>
 	</view>
 </template>
 
@@ -104,7 +105,7 @@
 		onLoad
 	} from "@dcloudio/uni-app";
 	const store = userStore();
-
+	const showLoading = ref("")
 	import {
 		useI18n
 	} from "vue-i18n";
@@ -141,6 +142,7 @@
 			Toast.text(t('x.b14'))
 			return 
 		}
+		showLoading.value.loading = true
 		const data = {
 			id:proId.value,
 			amount: inpVal.value
@@ -159,6 +161,8 @@
 			})
 		}).catch(err => {
 			Toast.text(err.message)
+		}).finally(()=>{
+			showLoading.value.loading = false
 		})
 	}
 	// 终于可以用了

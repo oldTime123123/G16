@@ -214,8 +214,7 @@
 
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-
-		"navigationBarTitleText": "RT Shop",
+		"navigationBarTitleText": "MTU",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8",
 		"navigationStyle": "custom",

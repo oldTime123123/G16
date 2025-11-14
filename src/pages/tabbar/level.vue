@@ -37,7 +37,7 @@
 							<view class="mt10 f28 text_bold">{{ item.bonus + ' ' + currency }}</view>
 						</view>
 						<view class="descItem text_center">
-							<view> {{ $t('x.a5') + ' ' + item.dayProfit + currency }}
+							<view> {{ $t('x.a5') + ' ' + item.dayProfit + currency }}.
 								{{ $t('x.a6') + ' ' + item.show_day + ' ' + $t('x.a7') }}
 							</view>
 						</view>

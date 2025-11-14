@@ -4,7 +4,7 @@ const themeNum1 = {
 	secondColor: "#000",
 	thirdColor:"#4B2300",
 	imgObj: {
-		kefuIcon:"/static/service/kefu1.png",
+		kefuIcon:"/static/service/kefu.png",
 		loginBg: {
 			// 'background-image':  " url('/static/themeNum1/index/topBg.png?v1') ",
 			'background-size':' 100% auto',

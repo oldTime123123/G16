@@ -189,7 +189,7 @@
 			}
 
 			.mainTextColor {
-				color: #E7201F;
+				color: #FF7C35;
 			}
 
 			.title {
