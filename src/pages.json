@@ -209,6 +209,9 @@
 		},
 		{
 			"path" : "pages/task/fundDetail"
+		},
+		{
+			"path" : "pages/mine/article2"
 		}
 	],
 

@@ -422,13 +422,13 @@
 			if (item.turn_type == 1) {
 				// 文章详情
 				uni.navigateTo({
-					url: "../mine/article?id=" + item.article_id
+					url: "../mine/article2?id=" + item.article_id
 				})
 			}
 
 		} else if (type == 3) {
 			uni.navigateTo({
-				url: "../mine/article?id=" + item.id
+				url: "../mine/article2?id=" + item.id
 			})
 		}
 	}

@@ -55,7 +55,7 @@
 			        complete: () => {
 			           setTimeout(()=>{
 						    locked = false;
-					   },5000)
+					   },10000)
 			        }
 			    });
 			};
