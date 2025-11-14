@@ -3,6 +3,7 @@ export default {
 		i_d1:"Company",
 		i_d2:"Best Global Marketing Agency",
 		i_d3:"Platform Notification",
+		i_d4:"Insufficient number of purchases",
 		b1:"Fund",
 		b2:"Available Balance",
 		b3:"Fund Balance",

@@ -53,7 +53,7 @@
 								{{t('x.b11')}}
 							</view>
 							<view class="value">
-								{{proInfo.did_num}}
+								{{proInfo.remaining_number}}
 							</view>
 						</view>
 						<view class="gridItem " >
@@ -140,6 +140,10 @@
 	const buyHandle = ()=>{
 		if(inpVal.value <1){
 			Toast.text(t('x.b14'))
+			return 
+		}
+		if(Number(proInfo.value.remaining_number) < Number(inpVal.value)){
+			Toast.text(t('x.i_d4'))
 			return 
 		}
 		showLoading.value.loading = true

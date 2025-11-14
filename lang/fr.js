@@ -70,6 +70,7 @@ export default {
     i_d1: "Entreprise",
     i_d2: "Meilleure agence de marketing mondiale",
     i_d3: "Notification de la plateforme",
+    i_d4: "Nombre d'achats insuffisant",
   },
   add1: {
     b_b1: "Veuillez sélectionner le nom de la banque",

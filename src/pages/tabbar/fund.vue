@@ -85,7 +85,7 @@
 								{{t('x.b11')}}
 							</view>
 							<view class="value">
-								{{item.did_num}}
+								{{item.remaining_number}}
 							</view>
 						</view>
 						<view class="gridItem " >

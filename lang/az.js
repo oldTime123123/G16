@@ -70,6 +70,7 @@ export default {
     i_d1: "Şirkəti",
     i_d2: "Ən yaxşı Qlobal Marketinq Agentliyi",
     i_d3: "Platforma bildirişi",
+    i_d4: "Qeyri-kafi satınalma sayı",
   },
   add1: {
     b_b1: "Zəhmət olmasa bank adını seçin",
