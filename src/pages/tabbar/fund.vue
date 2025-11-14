@@ -102,7 +102,9 @@
 						</view>
 					</view>
 					
-					<view class="mt30 contentBtn" @click="goDetail(item.id)">{{t('x.b13')}}</view>
+					<view class="mt30 contentBtn" v-if="item.remaining_number>0" @click="goDetail(item.id)">{{t('x.b13')}}</view>
+					<view class="mt30 contentBtn disableBtn" v-else >{{t('x.b13')}}</view>
+					<!--  -->
 				</view>
 			
 			</view>
@@ -181,7 +183,10 @@
 
 		}
 	}
-
+	.disableBtn{
+		background: #ccc;
+		color: #000;
+	}
 	.recordEl {
 		background: #fff;
 		border-radius: 30rpx;
