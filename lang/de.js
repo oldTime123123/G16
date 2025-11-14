@@ -67,6 +67,9 @@ export default {
     task2: "Provision zahlen",
     task3: "Empfangsaufgabe erfolgreich",
     vip1: "Bestätigen Sie, um den Levelwechsel freizuschalten",
+    i_d1: "Unternehmen",
+    i_d2: "Beste globale Marketingagentur",
+    i_d3: "Plattformbenachrichtigung",
   },
   add1: {
     b_b1: "Bitte wählen Sie den Banknamen aus",

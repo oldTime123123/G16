@@ -67,6 +67,9 @@ export default {
     task2: "Payer des commissions",
     task3: "Tâche de réception réussie",
     vip1: "Confirmez pour débloquer le changement de niveau",
+    i_d1: "Entreprise",
+    i_d2: "Meilleure agence de marketing mondiale",
+    i_d3: "Notification de la plateforme",
   },
   add1: {
     b_b1: "Veuillez sélectionner le nom de la banque",
