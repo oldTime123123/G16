@@ -305,6 +305,7 @@
 		// background: linear-gradient( 180deg, #FFE863 0%, #FF9A35 100%);
 		background: url('/static/team/teamRe.png') no-repeat ;
 		// background-size: contain;
+		background-size: contain;
 		margin-top: 50rpx;
 		padding: 100rpx  30rpx  60rpx;
 		

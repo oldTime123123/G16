@@ -48,7 +48,7 @@
 								</view>
 							</view>
 							<view class="mt5" v-if="actTabVal <2">
-								<view class="contentBtn" @click="completeHandle(item)">
+								<view class="contentBtn" @click="completeHandle(item)" style="font-size: 32rpx;">
 									{{t('x.ta3')}}
 								</view>
 							</view>

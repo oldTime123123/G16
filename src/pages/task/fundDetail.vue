@@ -37,7 +37,7 @@
 								{{t('x.b9')}}
 							</view>
 							<view class="value">
-								{{proInfo.rate}}%
+								{{proInfo.rate_big}}%
 							</view>
 						</view>
 						<view class="gridItem borderB">
@@ -45,7 +45,7 @@
 								{{t('x.b10')}}
 							</view>
 							<view class="value">
-								{{Number(proInfo.rate * proInfo.day).toFixed(2)}}%
+								{{Number(proInfo.rate_big * proInfo.day).toFixed(2)}}%
 							</view>
 						</view>
 						<view class="gridItem borderR ">

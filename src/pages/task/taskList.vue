@@ -87,21 +87,30 @@
 			url
 		})
 	}
-	const pages = ref({
-		page: 1,
-		size: 10
-	})
 	const paging = ref("")
 	const taskList = ref([])
+	const pages = ref({
+	  page: 1,
+	  size: 10,
+	  ids: []
+	})
 	const getData = (page) => {
-
-		request({
-			url: 'task/goods',
-			data: pages.value
-		}).then(res => {
-			paging.value.complete(res.list.data);
-			pages.value.page += 1
-		})
+	
+	  request({
+	    url: 'task/goods',
+	    data: {
+	      page: pages.value.page,
+	      size: pages.value.size,
+	      ids: JSON.stringify(pages.value.ids)
+	    }
+	  }).then(res => {
+	    for (let i = 0; i < res.list.data.length; i++) {
+	      pages.value.ids.push(res.list.data[i].id)
+	
+	    }
+	    paging.value.complete(res.list.data);
+	    pages.value.page += 1
+	  })
 	}
 
 	const reciveTaskHandle = (item) => {

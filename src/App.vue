@@ -35,25 +35,30 @@
 			SEOSetting()	
 			
 			
-			let locked = false
+			let locked = false;
+			
 			const handleH5UrlChange = e => {
-				console.log(e);
-				if(locked) return 
-				if (import.meta.env.MODE == 'production') {
-					locked = true
-					uni.request({
-						url: '/version.json',
-						success: e => {
-							if(e.data){
-								if (Number(e.data.version) !== Number(__APP_VERSION__)) {
-									window.location.reload()
-								}
-							}
-							locked = false
-						}
-					})
-				}
-			}
+			    if (locked || import.meta.env.MODE !== 'production') {
+			        return;
+			    }
+			    locked = true; // 加锁
+			    uni.request({
+			        url: '/version.json?t=' + Date.now(), 
+			        success: res => { 
+			            if (res.data && Number(res.data.version) !== Number(__APP_VERSION__)) {
+			                window.location.reload();
+			            }
+			        },
+			        fail: err => {
+			           
+			        },
+			        complete: () => {
+			           setTimeout(()=>{
+						    locked = false;
+					   },5000)
+			        }
+			    });
+			};
 			bus.on('h5-url-change', handleH5UrlChange);
 		},
 		onHide: function() {

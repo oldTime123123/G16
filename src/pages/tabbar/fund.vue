@@ -69,7 +69,7 @@
 								{{t('x.b9')}}
 							</view>
 							<view class="value">
-								{{item.rate}}%
+								{{item.rate_big}}%
 							</view>
 						</view>
 						<view class="gridItem borderB">
@@ -77,7 +77,7 @@
 								{{t('x.b10')}}
 							</view>
 							<view class="value">
-								{{Number(item.rate * item.day).toFixed(2)}}%
+								{{Number(item.rate_big * item.day).toFixed(2)}}%
 							</view>
 						</view>
 						<view class="gridItem borderR ">

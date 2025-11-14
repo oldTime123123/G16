@@ -29,11 +29,11 @@
 
 					<view class="mglr32 f24" style="flex: 1;">
 						<view class="between">
-							<view>{{item.template?item.template.title:''}}</view>
+							<view >{{item.template?item.template.title:''}}</view>
 							<view class="" style="color: #AFAFAF;">{{item.createTime}}</view>
 						</view>
-						<view class="mt26">
-							{{item.template?item.template.content:''}}
+						<view class="mt26" v-if="item.template">
+							<view v-html="tem.template.content"></view>
 						</view>
 					</view>
 
