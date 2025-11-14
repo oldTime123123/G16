@@ -136,7 +136,6 @@ background: linear-gradient( 90deg, #FF7C35 0%, #FFCD63 100%);
 		color: #fff;
 		height: 100rpx;
 		border-radius: 20rpx;
-		;
 		margin-top: 76rpx;
 		transition: .3s linear all;
 		background: linear-gradient( 270deg, #FFE030 0%, #FF710F 100%);

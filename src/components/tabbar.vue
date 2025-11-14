@@ -147,7 +147,7 @@
 				font-size: 20rpx;
 				font-weight: 400;
 				margin-top: 10rpx;
-				color: #D4700B;
+				color: #B35900;
 				text-transform: capitalize;
 			}
 

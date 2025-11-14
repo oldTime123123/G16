@@ -15,45 +15,41 @@
 				:empty-view-text="t('record.r_r1')" :loading-more-no-more-text="t('record.r_r1')"
 				:empty-view-reload-text="t('record.r_r2')" :loading-more-loading-text="t('record.r_r4')"
 				:loading-more-fail-text="t('record.r_r3')">
-				<view class="gridBox pdlr35 ">
-					<view class="taskItem" v-for="item in taskList">
-						<view class="title between text_center">
-							<view>
-								{{item.vip_name}}
-							</view>
-							<view>
-								{{item.vip_title}}
+				
+			<view class=" pdlr35 recordContent ">
+				<view class="taskItem flex  mb30" v-for="item in taskList">
+			
+					<view class="">
+						<image :src="item.pic" class="bbo10" style="width:240rpx ;height: 240rpx;"></image>
+					</view>
+					<view class="ml20 flex1">
+						<view class="textHidden color3 " style="height: 70rpx;">{{item.name}} </view>
+						<view class="mt5 flex listNameT between">
+							<view class=" textHiddenOne" v-if="item.vip_name">{{item.vip_name}}</view>
+							<view class=" ml10 textHiddenOne" v-if="item.vip_title"> {{item.vip_title}}</view>
+						</view>
+						<view class="mt5 colorC f26 between">
+							<view>{{t('x.ta1')}}</view>
+							<view>{{currency + item.price}}</view>
+						</view>
+						<view class="mt5 between">
+							<view class="color3 f26">{{t('x.ta2')}}</view>
+							<view class="mainTextColor  text_bold">
+								{{currency + item.commission}}
 							</view>
 						</view>
-						<view class="center mt15 goodsImg">
-							<image :src="item.pic" style="width: 100%;height: 100%;"></image>
-						</view>
-						<view class="wordContent">
-							<view class="textHidden f24 color3">
-								{{item.name}}
-							</view>
-							<!-- <view class="mt5 f24 colorC">
-								Price <del>{{currency + item.price}}</del>
-							</view> -->
-							<view class="mt5 between">
-								<view class="f24">
-									<view class="color3">{{ t('x.task2') }}</view>
-									<view class="mainTextColor text_bold f32 flex" style="align-items: center;">
-										<image class="mr5" style="width: 35rpx;height: 35rpx;" src="/static/825.png"
-											mode="">
-										</image> {{ item.commission}}
-									</view>
-								</view>
-								<view class="center" @click="reciveTaskHandle(item)"
-									style="position: relative;z-index: 10;">
-									<image src="/static/task/car.png" mode="widthFix" style="width: 50rpx;"></image>
-								</view>
+						<view class="between">
+							<view></view>
+							<view>
+								<image src="../../static/task/t_r.png" mode="widthFix" style="width: 50rpx;height: 50rpx;" @click="reciveTaskHandle(item)"></image>
 							</view>
 						</view>
 					</view>
 				</view>
+			</view>
 			</z-paging>
 		</view>
+		<Loading ref="showLoading"></Loading>
 	</view>
 </template>
 
@@ -112,8 +108,10 @@
 	    pages.value.page += 1
 	  })
 	}
-
+	
+	const showLoading = ref("")
 	const reciveTaskHandle = (item) => {
+		showLoading.value.loading = true
 		request({
 			url: 'task/createConvey',
 			methods: "POST",
@@ -127,6 +125,8 @@
 			})
 		}).catch(e => {
 			Toast.text(e.message)
+		}).finally(()=>{
+			showLoading.value.loading = false
 		})
 	}
 	const currency = localStorage.getItem('currency')
@@ -145,49 +145,15 @@
 		z-index: 99;
 	}
 
-	.gridBox {
-		margin-top: 120rpx;
-		display: grid;
-		gap: 20rpx;
-		grid-template-columns: repeat(2, 1fr);
-
-		.wordContent {
-			padding: 10rpx;
-		}
-
-		.taskItem::before {
-			content: '';
-			/* 伪元素必须有 content 属性 */
-
-			/* 关键：绝对定位，并铺满整个父盒子 */
-			position: absolute;
-			top: -2rpx;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-image: url('/static/task/listTitle.png');
-			background-repeat: no-repeat;
-			background-size: 110%;
-			background-position: top;
-			// border-radius: 10rpx 10rpx 0 0;
-			z-index: 1;
-			border-radius: 10px;
-		}
+	.recordContent {
+		margin-top: 160rpx;
 
 		.taskItem {
-			background-color: #fff;
+			padding: 24rpx;
+			font-size: 24rpx;
 			border-radius: 10rpx;
-			position: relative;
-			width: 320rpx;
-			overflow: hidden;
-
-			.goodsImg {
-				width: 320rpx;
-				height: 320rpx;
-				background-size: 100%;
-				z-index: -1;
-				margin-top: 50rpx;
-			}
+			background: #fff;
+			box-shadow: 0px 2px 8px 0px rgba(143, 86, 86, 0.25);
 
 			.color3 {
 				color: #333;
@@ -201,25 +167,30 @@
 				color: #FF7C35;
 			}
 
-			.title {
-				height: 60rpx;
-				background-size: cover;
-				font-size: 24rpx;
+			.tag1 {
+				padding: 3rpx 10rpx;
+				background: linear-gradient(90deg, #FF9036 0%, #FFC72D 100%);
+				border-radius: 4px 4px 4px 4px;
 				color: #fff;
-				text-align: center;
-				position: absolute;
-				z-index: 10;
-				width: 100%;
+				font-size: 26rpx;
+			}
 
-				view:nth-child(1) {
-					width: 60%;
-					font-size: 28rpx;
-				}
-
-				view:nth-child(2) {
-					flex: 1;
-				}
+			.tag2 {
+				color: #FF7C35;
+				border: 1px solid #FF7C35;
+				border-radius: 4px;
+				padding: 3rpx 5rpx;
+				font-size: 24rpx;
 			}
 		}
+		.listNameT{
+			background: url('../../static/task/nameT.png') no-repeat;
+			height: 50rpx;
+			background-size: cover;
+			line-height: 50rpx;
+			padding: 0 20rpx;
+			color:#fff ;
+			font-size: 28rpx;
+		}
 	}
-</style>
+	</style>

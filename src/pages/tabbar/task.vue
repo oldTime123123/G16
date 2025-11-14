@@ -1,8 +1,7 @@
 <template>
-	<view class="indexPage">
-	
-		<view class="text_center taskTop">
-			<view style="height: 100rpx;" class="pdlr30">
+	<view class="">
+		<view class="text_center  taskTop">
+			<view class="topNavBar pdlr30" style="height: 100rpx;">
 				<view class="between " >
 					<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
 						@click="methods.back"></image>
@@ -11,7 +10,8 @@
 					
 				</view>
 				</view>
-				
+			</view>
+			<view class="pdlr30">
 				<view class="mt30 f32 gridBox2">
 					<view v-for="item in tabs" class="topTab" :class="item.value == actTabVal?'actTabEl':''"
 						@click="changeTab(item)">{{item.name}}</view>
@@ -28,14 +28,14 @@
 				<view class=" pdlr35 recordContent ">
 					<view class="taskItem flex  mb30" v-for="item in taskRecordList">
 
-						<view class="center">
+						<view class="">
 							<image :src="item.goods?.pic" class="bbo10" style="width:240rpx ;height: 240rpx;"></image>
 						</view>
 						<view class="ml20">
 							<view class="textHidden color3 " style="height: 70rpx;">{{item.goods?.name}} </view>
-							<view class="mt5 flex">
-								<view class="tag1 textHiddenOne" v-if="item.vip?.name">{{item.vip?.name}}</view>
-								<view class="tag2 ml10 textHiddenOne" v-if="item.vip?.title"> {{item.vip?.title}}</view>
+							<view class="mt5 between listNameT">
+								<view class=" textHiddenOne" v-if="item.vip?.name">{{item.vip?.name}}</view>
+								<view class=" ml10 textHiddenOne" v-if="item.vip?.title"> {{item.vip?.title}}</view>
 							</view>
 							<view class="mt5 colorC f26 between">
 								<view>{{t('x.ta1')}}</view>
@@ -48,7 +48,7 @@
 								</view>
 							</view>
 							<view class="mt5" v-if="actTabVal <2">
-								<view class="contentBtn" @click="completeHandle(item)" style="font-size: 32rpx;">
+								<view class="contentBtn" @click="completeHandle(item)" >
 									{{t('x.ta3')}}
 								</view>
 							</view>
@@ -318,31 +318,36 @@ const methods = {
 	}
 
 	.taskTop {
-		// background: linear-gradient(90deg, #E6201F 0%, #871112 100%);
 		color: #fff;
-		padding: 30rpx 0;
+		// padding: 30rpx 0;
 		position: fixed;
 		width: 100%;
 		top: 0;
 		z-index: 99;
-		height: 180rpx;
+		// height: 180rpx;
 		.gridBox2 {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			text-align: center;
 			font-weight: bold;
-
+			background: #fff;
+			color: #B2B2B2;
+			padding: 10rpx 0 30rpx 0;
+			box-shadow: 0px 2px 8px 0px rgba(143,86,86,0.25);
+			border-radius: 10rpx;
 			.topTab {
 				position: relative;
 				padding: 15rpx 0;
 			}
-
+			.actTabEl{
+				color:#FF7C35;
+			}
 			.actTabEl::after {
 				display: block;
 				background: currentColor;
 				position: absolute;
 				content: '';
-				width: 20%;
+				width: 40%;
 				height: 8rpx;
 				border-radius: 10rpx;
 				left: 50%;
@@ -354,13 +359,13 @@ const methods = {
 	}
 
 	.recordContent {
-		margin-top: 220rpx;
+		margin-top: 250rpx;
 
 		.taskItem {
 			padding: 24rpx;
 			font-size: 24rpx;
 			border-radius: 10rpx;
-			background: #F7F8FA;
+			background: #fff;
 			box-shadow: 0px 2px 8px 0px rgba(143, 86, 86, 0.25);
 
 			.color3 {
@@ -374,22 +379,14 @@ const methods = {
 			.mainTextColor {
 				color: #FF7C35;
 			}
-
-			.tag1 {
-				padding: 3rpx 10rpx;
-				background: linear-gradient(90deg, #FF9036 0%, #FFC72D 100%);
-				border-radius: 4px 4px 4px 4px;
-				color: #fff;
-				font-size: 26rpx;
-			}
-
-			.tag2 {
-				color: #FF7C35;
-				border: 1px solid #FF7C35;
-				border-radius: 4px;
-				padding: 3rpx 5rpx;
-				font-size: 24rpx;
-			}
+	.listNameT{
+			background: url('../../static/task/nameT.png') no-repeat;
+			height: 50rpx;
+			background-size: cover;
+			line-height: 50rpx;
+			padding: 0 20rpx;
+			color:#fff ;
+		}
 		}
 	}
 </style>

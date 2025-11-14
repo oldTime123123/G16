@@ -51,29 +51,34 @@
 				<view class="teamDataItem" v-for="(item,index) in teamDataList ">
 					<view class="teamTitle">{{item.name}} </view>
 					<view class="teamContent">
-						<view class="between">
-							<view>
+						<view class="teamItem">
+							<view class="f26">
 								{{t('x.t2')}} {{item.invitation}}% 
 							</view>
-							<view>
+							<view class="value">
 								{{item.invitation_rebate}}
 							</view>
 						</view>
-						<view class="between">
-							<view>
+						<view class="teamItem">
+							<view class="f26">
 								{{t('x.t3')}} {{item.task}}% 
 							</view>
-							<view>
+							<view class="value">
 								{{item.task_rebate}}
 							</view>
 						</view>
-						<view class="between">
-							<view>
-								{{t('x.t4')}}
+				
+					</view>
+					<view class="pdlr20 mgtb10 ">
+						<view class="teamItem  between">
+							<view class="flex col_center">
+								<image src="../../static/team/t_ico.png" mode="widthFix" style="width: 50rpx;height: 50rpx;"></image>
+								<span class="ml10">{{t('x.t4')}}</span>
 							</view>
-							<view class="flex col_center" @click="changePage('../mine/team?level='+(index+1))">
-								{{item.size}} 
+							<view class="flex col_center">
+								<span class="value f34">{{item.size}}</span>
 								<image src="../../static/team/right.png" class="ml20" mode="widthFix" style="width: 40rpx;"></image>
+															
 							</view>
 						</view>
 					</view>
@@ -283,21 +288,43 @@
 		border-radius: 12px 12px 12px 12px;
 		// padding: 20rpx;
 		margin-bottom: 30rpx;
+		padding-bottom: 20rpx;
 		.teamTitle{
-			background: linear-gradient( 90deg, #FFB005 0%, #FFE065 100%);
+			background:url('/static/team/t_title.png') no-repeat ;
+			background-size: contain;
+			background-position: center;
+			text-align: center;
 			border-radius: 12px 12px 0px 0px;
 			padding: 20rpx;
 			color: #fff;
 			font-size: 34rpx;
 			font-weight: bold;
 		}
+		.teamItem{
+			background: #FFF1E8;
+			padding: 20rpx;
+			border-radius: 10rpx;
+			color: #610B00;
+			.value{
+				color:#FB5A0E ;
+				font-weight: bold;
+			}
+		}
 		.teamContent{
 			padding: 0  20rpx;
-			.between:not(:last-child){
-				border-bottom: 1px solid #D2DFE3;
-			}
-			.between{
-				padding: 25rpx 0;
+			display: grid;
+			grid-template-columns: repeat(2,1fr);
+			text-align: center;
+		gap: 10rpx;
+		margin-top: 20rpx;
+			.teamItem{
+				padding: 10rpx 0;
+				border-radius: 10rpx;
+				.f26{
+					height: 60rpx;
+					line-height: 60rpx;
+				}
+				
 			}
 		}
 	}
