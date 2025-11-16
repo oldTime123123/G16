@@ -11,7 +11,10 @@ import langEs from "./es";
 import langFa from "./fa";
 
 import langFr from "./fr";
-
+import nl from "./nl";
+import bg from "./bg";
+import uz from "./uz";
+import uk from "./uk";
 const messages = {
   // 'tw': langTw,
   en: langEn,
@@ -22,6 +25,10 @@ const messages = {
   es: langEs,
   de: langDe,
   fr: langFr,
+  nl: nl,
+  bg: bg,
+  uz: uz,
+  uk: uk,
 };
 
 let cur_lang = uni.getStorageSync("lang");
