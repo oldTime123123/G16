@@ -435,22 +435,22 @@
 
 	const commList = ref([{
 			name: 'Recharge',
-			icon: "/static/themeNum1/index/com1.png",
+			icon: "/static/themeNum1/index/icon1.png",
 			url: './recharge'
 		},
 		{
 			name: 'Withdrawal',
-			icon: "/static/themeNum1/index/com2.png",
+			icon: "/static/themeNum1/index/icon2.png",
 			url: '../mine/withdraw'
 		},
 		{
 			name: 'Salary details',
-			icon: "/static/themeNum1/index/com3.png",
+			icon: "/static/themeNum1/index/icon3.png",
 			url: '../mine/article?id=2'
 		},
 		{
 			name: 'App download',
-			icon: "/static/themeNum1/index/com4.png",
+			icon: "/static/themeNum1/index/icon4.png",
 			url: 'down'
 		},
 	])
