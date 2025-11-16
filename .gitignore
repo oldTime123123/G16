@@ -1,0 +1,8 @@
+.git/
+node_modules/
+dist/
+_static_/
+
+
+# Log files
+yarn
