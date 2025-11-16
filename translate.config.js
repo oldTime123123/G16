@@ -21,35 +21,38 @@ export default defineConfig({
       label: '将结果翻译到lang文件夹下',
       targetConfig: [
 		  {
-		    targetLang: Lang.az,
-		    outPath: 'lang/az.js',
+		    targetLang: Lang.ar,
+		    outPath: 'lang/ar.js',
 		  },
         {
-          targetLang: Lang.ar,
-          outPath: 'lang/ar.js',
+          targetLang: Lang.nl,
+          outPath: 'lang/nl.js',
         },
-        {
-          targetLang: Lang.ru,
-          outPath: 'lang/ru.js',
-        },
-        {
-          targetLang: Lang.de,
-          outPath: 'lang/de.js',
-        },
-        {
-          targetLang: Lang.es,
-          outPath: 'lang/es.js',
-        },
-        {
-          targetLang: Lang.fa,
-          outPath: 'lang/fa.js',
-        },
-      
         {
           targetLang: Lang.fr,
           outPath: 'lang/fr.js',
         },
-       
+        {
+          targetLang: Lang.uz,
+          outPath: 'lang/uz.js',
+        },
+        {
+          targetLang: Lang.bg,
+          outPath: 'lang/bg.js',
+        },
+        {
+          targetLang: Lang.uk,
+          outPath: 'lang/uk.js',
+        },
+      
+        {
+          targetLang: Lang.fa,
+          outPath: 'lang/fa.js',
+        },
+       {
+         targetLang: Lang.ru,
+         outPath: 'lang/ru.js',
+       },
        
       ]
     }

@@ -63,22 +63,27 @@
 				<view class="overlay-content">
 
 					<view class="title center">{{resPopType<2?t('x.ta4'):t('x.ta5')}}</view>
-					<view class="content center">
+				<!-- 	<view class="content center">
 						<image class="c_img" v-if="resPopType <2" src="/static/task/p_s.png" mode="widthFix"></image>
 						<image class="p_img" v-else src="/static/task/p_w.png" mode="widthFix"></image>
-					</view>
+					</view> -->
+					<view style="height: 260rpx;"></view>
 					<view class="center">
 						<nut-progress style="width: 60%;" :percentage="percentageVal" :show-text="false"
-							stroke-color="#FFA601" />
+							stroke-color="linear-gradient( 90deg, #FF5F4E 0%, #FFA601 100%)" />
 					</view>
 					<view class="mt10" style="color: #000;" v-if="resPopType>1">
 						{{t('x.ta6')}}: <br>
 						<span class="mainTextColor"> {{needAmount + currency}}</span>
 					</view>
-					<view class="center" :class="resPopType>1?'mt20':'mt40'" v-if="percentageVal == 100 || resPopType>1">
-						<view class="confirmBtn center" @click="goTaskList">{{t('all.a_c1')}}</view>
-					</view>
+					<!-- v-if="percentageVal == 100 || resPopType>1" -->
+				
 					<view class="closeBtn">
+						<view class="center " :class="resPopType>1?'mt20':'mt40'" >
+							<view class="confirmBtn " @click="goTaskList">{{t('all.a_c1')}}</view>
+						</view>
+					</view>
+					<view class="closeBtn closeBtn2">
 						<image src="/static/task/p_close.png" @click="showResPop = false" mode="widthFix"
 							style="height: 80rpx; width: 80rpx;"></image>
 					</view>
@@ -125,7 +130,7 @@ const methods = {
 			value: 2
 		}
 	])
-	const showResPop = ref(false)
+	const showResPop = ref(true)
 	const resPopType = ref(1) //1 success 2 wait
 	const changeTab = item => {
 		actTabVal.value = item.value
@@ -259,14 +264,14 @@ const methods = {
 		justify-content: center;
 
 		.overlay-content {
-			width: 500rpx;
-			height: 500rpx;
-			background: url('/static/task/maskBg.png') no-repeat;
-			background-size: contain;
+			width: 600rpx;
+			height: 400rpx;
+			background: url('/static/task/mg1.png') no-repeat;
+			background-size: cover;
 			background-position: center;
 			text-align: center;
-			padding: 20rpx;
-			color: #fff;
+			padding: 100rpx 20rpx 20rpx;
+			color: #000;
 			position: relative;
 
 			.closeBtn {
@@ -275,15 +280,18 @@ const methods = {
 				left: 50%;
 				transform: translateX(-50%);
 			}
-
+			.closeBtn2{
+				top: -20rpx;
+				left: 90%;
+				transform: translateX(-100%);
+			}
 			.title {
 				max-width: 70%;
-				font-size: 40rpx;
+				font-size: 30rpx;
 				font-weight: bold;
 				text-align: center;
 				margin: 0 auto;
-				height: 100rpx;
-
+				// height: 100rpx;
 			}
 
 			.mainTextColor {
@@ -308,11 +316,13 @@ const methods = {
 			}
 
 			.confirmBtn {
-				background: url('/static/task/p_confirm.png') no-repeat;
-				height: 80rpx;
-				width: 50%;
-				background-size: cover;
+				background: url('/static/task/maskBtn.png') no-repeat;
+				height: 100rpx;
+				width: 400rpx;
+				background-size: contain;
 				line-height: 80rpx;
+				color: #fff;
+				background-position: center;
 			}
 		}
 	}
