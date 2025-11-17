@@ -1,12 +1,12 @@
 <template>
-	<view  class="indexPage">
+	<view class="indexPage">
 		<view class="between topNavBar">
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
 				@click="methods.back"></image>
-				
-				<view>
-					{{pageData.name}}
-				</view>
+
+			<view class="f28">
+				{{pageData.name}}
+			</view>
 			<view style="width: 50rpx;"></view>
 		</view>
 		<view class="pdlr30">
