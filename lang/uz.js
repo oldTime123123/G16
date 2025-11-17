@@ -1,5 +1,9 @@
 export default {
   x: {
+    n1: "Ish haqi tafsilotlari",
+    n2: "Ilovani yuklab olish",
+    n3: "Sozlamalar",
+    n4: "Naqd pulni qayta to'ldirish",
     i_d1: "Jamiyat",
     i_d2: "Eng yaxshi global marketing agentligi",
     i_d3: "Platforma haqida xabar berish",

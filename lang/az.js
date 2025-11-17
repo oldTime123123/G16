@@ -1,5 +1,9 @@
 export default {
   x: {
+    n1: "Əmək haqqı məlumatları",
+    n2: "Tətbiqin yüklənməsi",
+    n3: "Tənzimləmə",
+    n4: "Nağd pulun doldurulması",
     b1: "Fond",
     b2: "Mövcud tarazlıq",
     b3: "Fond balansı",

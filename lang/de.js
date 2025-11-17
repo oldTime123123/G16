@@ -1,5 +1,9 @@
 export default {
   x: {
+    n1: "Gehaltsdetails",
+    n2: "App herunterladen",
+    n3: "Einstellungen",
+    n4: "Guthaben aufladen",
     b1: "Fonds",
     b2: "Verfügbares Guthaben",
     b3: "Fondsguthaben",

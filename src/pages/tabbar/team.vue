@@ -77,7 +77,7 @@
 							</view>
 							<view class="flex col_center">
 								<span class="value f34">{{item.size}}</span>
-								<image src="../../static/team/right.png" class="ml20" mode="widthFix" style="width: 40rpx;"></image>
+								<image src="../../static/team/right.png" class="ml20" mode="widthFix" style="width: 40rpx;" @click="changePage(`/pages/mine/team?level=${index+1}`)"></image>
 															
 							</view>
 						</view>

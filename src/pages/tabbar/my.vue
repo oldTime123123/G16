@@ -263,11 +263,11 @@
 			// url:"https://www.binance.com/en"
 		},
 {
-			name: 'Setting',
+			name: t('x.n3'),
 			img: store.$state.my.myList[7],
 			url: '../setting/setUp',
 			openLink: false,
-			showFlag: true,
+			showFlag: false,
 			// url:"https://www.binance.com/en"
 		},
 		{
@@ -433,7 +433,7 @@
 			font-size: 24rpx;
 			color: #4B2300;
 			// padding: 20rpx 0;
-			height: 150rpx;
+			min-height: 150rpx;
 			// border: 1px solid;
 			// border-image: linear-gradient(141deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) 1 1;
 		}

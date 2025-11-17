@@ -61,7 +61,7 @@
 					"pagePath": "/pages/tabbar/fund",
 					"iconPath": "/static/themeNum1/tabbar/t2.png",
 					"selectedIconPath": "/static/themeNum1/tabbar/t22.png",
-					"text": 'Fund'
+					"text": t('x.b1')
 				},
 
 				{

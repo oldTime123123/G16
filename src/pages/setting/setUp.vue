@@ -3,7 +3,7 @@
 		<view class="between topNavBar">
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
 				@click="methods.back"></image>
-			Withdraw address
+			{{ t('x.m7') }}
 			<view style="width: 50rpx;"></view>
 		</view>
 		<view class="pdlr35 pt33">

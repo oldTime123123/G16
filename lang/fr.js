@@ -1,5 +1,9 @@
 export default {
   x: {
+    n1: "Détails du salaire",
+    n2: "Télécharger APP",
+    n3: "Paramètre",
+    n4 : "Recharger de l'argent",
     b1: "Fonds",
     b2: "Solde disponible",
     b3: "Solde du fonds",

@@ -1,5 +1,9 @@
 export default {
   x: {
+    n1: "Detalles del salario",
+    n2: "Descarga de la aplicación",
+    n3: "Ajustes",
+    n4: "Recarga de saldo",
     b1: "Fondo",
     b2: "Saldo disponible",
     b3: "Saldo del fondo",

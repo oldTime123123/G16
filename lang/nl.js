@@ -1,5 +1,9 @@
 export default {
   x: {
+    n1: "Salarisgegevens",
+    n2: "App downloaden",
+    n3: "Instellingen",
+    n4: "Contant geld opwaarderen",
     i_d1: "Bedrijf",
     i_d2: "Beste wereldwijde marketingbureau",
     i_d3: "Platformmelding",
