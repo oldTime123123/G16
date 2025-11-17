@@ -4,7 +4,7 @@
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
 				@click="methods.back"></image>
 
-			<view class="f28">
+			<view class="title">
 				{{pageData.name}}
 			</view>
 			<view style="width: 50rpx;"></view>
@@ -66,5 +66,18 @@
 </script>
 
 <style lang="scss">
+	.topNavBar {
+		height: 100% !important;
+		min-height: 88rpx !important;
+		box-sizing: border-box;
+		padding: 10rpx 32rpx;
+	}
 
+	.title {
+		width: 75%;
+		word-break: break-all;
+		line-height: 44rpx;
+		font-size: 30rpx;
+		text-align: center;
+	}
 </style>
