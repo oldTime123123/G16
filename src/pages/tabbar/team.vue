@@ -1,6 +1,6 @@
 <template>
 	<view class="teamPage indexPage">
-		
+
 		<view class="colorfff f40 text_bold center" style="height:100rpx">
 			<view class="textUpper">{{ $t('x.a12') }}</view>
 		</view>
@@ -38,76 +38,79 @@
 
 			<view class="mt30 teamTopPort">
 				<view class="bgWhiteBox">
-					<view  class="gridItem" v-for="item in teamPortData">
+					<view class="gridItem" v-for="item in teamPortData">
 						<view class="title center">
-							{{item.name}}
+							{{ item.name }}
 						</view>
-						<view class=" value  mt5">{{item.value}}</view>
+						<view class=" value  mt5">{{ item.value }}</view>
 					</view>
 				</view>
 			</view>
-			
+
 			<view class="mt40">
-				<view class="teamDataItem" v-for="(item,index) in teamDataList ">
-					<view class="teamTitle">{{item.name}} </view>
+				<view class="teamDataItem" v-for="(item, index) in teamDataList">
+					<view class="teamTitle">{{ item.name }} </view>
 					<view class="teamContent">
 						<view class="teamItem">
 							<view class="f26">
-								{{t('x.t2')}} {{item.invitation}}% 
+								{{ t('x.t2') }} {{ item.invitation }}%
 							</view>
 							<view class="value">
-								{{item.invitation_rebate}}
+								{{ item.invitation_rebate }}
 							</view>
 						</view>
 						<view class="teamItem">
 							<view class="f26">
-								{{t('x.t3')}} {{item.task}}% 
+								{{ t('x.t3') }} {{ item.task }}%
 							</view>
 							<view class="value">
-								{{item.task_rebate}}
+								{{ item.task_rebate }}
 							</view>
 						</view>
-				
+
 					</view>
 					<view class="pdlr20 mgtb10 ">
 						<view class="teamItem  between">
 							<view class="flex col_center">
-								<image src="../../static/team/t_ico.png" mode="widthFix" style="width: 50rpx;height: 50rpx;"></image>
-								<span class="ml10">{{t('x.t4')}}</span>
+								<image src="../../static/team/t_ico.png" mode="widthFix"
+									style="width: 50rpx;height: 50rpx;"></image>
+								<span class="ml10">{{ t('x.t4') }}</span>
 							</view>
 							<view class="flex col_center">
-								<span class="value f34">{{item.size}}</span>
-								<image src="../../static/team/right.png" class="ml20" mode="widthFix" style="width: 40rpx;" @click="changePage(`/pages/mine/team?level=${index+1}`)"></image>
-															
+								<span class="value f34">{{ item.size }}</span>
+								<image src="../../static/team/right.png" class="ml20" mode="widthFix"
+									style="width: 40rpx;" @click="changePage(`/pages/mine/team?level=${index + 1}`)">
+								</image>
+
 							</view>
 						</view>
 					</view>
 				</view>
 			</view>
-		<view class="linkBox">
-			<view class="text_center title">
-				{{t('x.t5')}}		
-			</view>
-			<view class="mt30 codeListBoxEl">
-				<view v-for="item in inviteCode" class="center">
-					{{item}}
+			<view class="linkBox">
+				<view class="text_center title">
+					{{ t('x.t5') }}
 				</view>
-			</view>
-			<view class="center mt30">
-				
-				<view class="copyBtn  flex " @click="copyHandle(inviteCode)">
-					<view style="line-height: 120rpx;">
-						<image src="/static/team/linkIcon.png" mode="widthFix" style="width: 50rpx;"></image>
+				<view class="mt30 codeListBoxEl">
+					<view v-for="item in inviteCode" class="center">
+						{{ item }}
 					</view>
-					<view class="ml10  text_bold">
-						{{t('x.t6')}}
+				</view>
+				<view class="center mt30">
+
+					<view class="copyBtn  flex " @click="copyHandle(inviteCode)">
+						<view style="line-height: 120rpx;">
+							<image src="/static/team/linkIcon.png" mode="widthFix" style="width: 50rpx;"></image>
+						</view>
+						<view class="ml10  text_bold">
+							{{ t('x.t6') }}
+						</view>
 					</view>
 				</view>
 			</view>
 		</view>
-		</view>
-		
-	
+
+
 		<!-- 选择器 -->
 		<!-- 日历 -->
 		<nut-calendar v-model:visible="isVisible" type="range" @choose="setChooseValue" start-date="2025-10-01">
@@ -117,111 +120,111 @@
 </template>
 
 <script setup>
-	import {request} from '../../../comm/request.ts';
-	import {
-		userStore
-	} from "@/store/themeNum.js";
-	import Tabbar from '@/components/tabbar.vue'
-	import {
-		Toast
-	} from '@nutui/nutui';
-	import useClipboard from 'vue-clipboard3'
-	import {
-		onShow,
-		onLoad
-	} from "@dcloudio/uni-app";
-	const {
-		toClipboard
-	} = useClipboard()
-	const store = userStore();
-	import {
-		useI18n
-	} from "vue-i18n";
+import { request } from '../../../comm/request.ts';
+import {
+	userStore
+} from "@/store/themeNum.js";
+import Tabbar from '@/components/tabbar.vue'
+import {
+	Toast
+} from '@nutui/nutui';
+import useClipboard from 'vue-clipboard3'
+import {
+	onShow,
+	onLoad
+} from "@dcloudio/uni-app";
+const {
+	toClipboard
+} = useClipboard()
+const store = userStore();
+import {
+	useI18n
+} from "vue-i18n";
 
-	const {
-		t
-	} = useI18n();
-	const pages = ref({
-		page: 1,
-		size: 10,
-		level: 0,
-		start: "",
-		end: ""
+const {
+	t
+} = useI18n();
+const pages = ref({
+	page: 1,
+	size: 10,
+	level: 0,
+	start: "",
+	end: ""
+})
+const isVisible = ref(false)
+const clearHandle = () => {
+	pages.value.start = ""
+	pages.value.end = ""
+}
+const searchHandle = () => {
+	const data = Object.assign(pages.value)
+	getRecord(data)
+}
+const setChooseValue = param => {
+	pages.value.start = param[0][3]
+	pages.value.end = param[1][3]
+};
+const changePage = url => {
+	uni.navigateTo({
+		url
 	})
-	const isVisible = ref(false)
-	const clearHandle = () => {
-		pages.value.start = ""
-		pages.value.end = ""
+}
+const inviteCode = ref("")
+const inviteLink = ref("")
+const copyHandle = async (data) => {
+	try {
+		await toClipboard(inviteLink.value)
+		Toast.text(t('all.a_d1') + " " + t('all.a_c9'))
+	} catch (e) {
+		console.error(e)
 	}
-	const searchHandle = () => {
-		const data = Object.assign(pages.value)
-		getRecord(data)
-	}
-	const setChooseValue = param => {
-		pages.value.start = param[0][3]
-		pages.value.end = param[1][3]
-	};
-	const changePage = url=>{
-		uni.navigateTo({
-			url
-		})
-	}
-	const inviteCode  = ref("")
-	const inviteLink = ref("")
-	const copyHandle = async (data) => {
-		try {
-			await toClipboard(inviteLink.value)
-			Toast.text(t('all.a_d1') + " " + t('all.a_c9'))
-		} catch (e) {
-			console.error(e)
-		}
-	}
-	const teamPortData = ref([
-		{
-			name:t('x.t7'),
-			value:0
-		},
-		{
-			name:t('x.t8'),
-			value:0
-		},
-		{
-			name:t('x.t9'),
-			value:0
-		},
-		{
-			name:t('x.t10'),
-			value:0
-		},
-		{
-			name:t('x.t11'),
-			value:0
-		},
-		{
-			name:t('x.t12'),
-			value:0
-		},
-	])
-	const teamDataList = ref([
-		
-	])
+}
+const teamPortData = ref([
+	{
+		name: t('x.t7'),
+		value: 0
+	},
+	{
+		name: t('x.t8'),
+		value: 0
+	},
+	{
+		name: t('x.t9'),
+		value: 0
+	},
+	{
+		name: t('x.t10'),
+		value: 0
+	},
+	{
+		name: t('x.t11'),
+		value: 0
+	},
+	{
+		name: t('x.t12'),
+		value: 0
+	},
+])
+const teamDataList = ref([
 
-	const getRecord = (data) => {
+])
+
+const getRecord = (data) => {
 	request({
-		url:'user/record/team/report'
-	}).then(res=>{
+		url: 'user/record/team/report'
+	}).then(res => {
 		inviteCode.value = res.invite_code
-		inviteLink.value  =res.invite_link
-		const  A_level = {
-			name:t('x.t13'),
+		inviteLink.value = res.invite_link
+		const A_level = {
+			name: t('x.t13'),
 			...res.team_a
 		}
-		const  B_level = {
-			name:t('x.t14'),
+		const B_level = {
+			name: t('x.t14'),
 			...res.team_b
 		}
-		const  C_level = {
-			name:t('x.t15'),
+		const C_level = {
+			name: t('x.t15'),
 			...res.team_c
 		}
 		teamDataList.value = []
@@ -235,162 +238,182 @@
 		teamPortData.value[4].value = res.level2
 		teamPortData.value[5].value = res.level3
 	})
-	}
-	onLoad(() => {
-		getRecord()
-	})
+}
+onLoad(() => {
+	getRecord()
+})
 </script>
 
 <style lang="scss" scoped>
-	.linkBox{
-		background: url('/static/team/linkBox.png') no-repeat;
-		background-size: contain;
-		height: 470rpx;
-		margin-top: 50rpx;
-		padding-top: 30rpx;
-		.codeListBoxEl{
-			display: grid;
-			grid-template-columns: repeat(6,1fr);
-			gap: 10rpx;
-			padding: 0 80rpx;
-			view{
-				background: #fff;
-				border-radius: 10rpx;
-				color: #000;
-				height: 70rpx;
-				font-weight: bold;
-				font-size: 38rpx;
-				
-			}
-		}
-		.title{
-			font-size: 44rpx;
+.linkBox {
+	background: url('/static/team/linkBox.png') no-repeat;
+	background-size: contain;
+	height: 470rpx;
+	margin-top: 50rpx;
+	padding-top: 30rpx;
+
+	.codeListBoxEl {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 10rpx;
+		padding: 0 80rpx;
+
+		view {
+			background: #fff;
+			border-radius: 10rpx;
+			color: #000;
+			height: 70rpx;
 			font-weight: bold;
-			color: #610B00;
-		}
-		.copyBtn{
-			text-align: center;
-			justify-content: center;
-			color: #fff;
-			background:url('/static/team/linkBtn.png') no-repeat ;
-			background-size: cover;
-			height: 120rpx;
-			line-height: 100rpx;
-			width: 50%;
-			font-size: 44rpx;
-			background-position: top;
-			margin-top: 80rpx;
+			font-size: 38rpx;
+
 		}
 	}
-	.teamDataItem{
-		background: #FFFFFF;
-		box-shadow: 0px 4px 4px 0px rgba(121,33,33,0.25);
-		border-radius: 12px 12px 12px 12px;
-		// padding: 20rpx;
-		margin-bottom: 30rpx;
-		padding-bottom: 20rpx;
-		.teamTitle{
-			background:url('/static/team/t_title.png') no-repeat ;
-			background-size: contain;
-			background-position: center;
-			text-align: center;
-			border-radius: 12px 12px 0px 0px;
-			padding: 20rpx;
-			color: #fff;
-			font-size: 34rpx;
+
+	.title {
+		font-size: 44rpx;
+		font-weight: bold;
+		color: #610B00;
+	}
+
+	.copyBtn {
+		text-align: center;
+		justify-content: center;
+		color: #fff;
+		background: url('/static/team/linkBtn.png') no-repeat;
+		background-size: cover;
+		height: 120rpx;
+		line-height: 100rpx;
+		width: 50%;
+		font-size: 44rpx;
+		background-position: top;
+		margin-top: 80rpx;
+	}
+}
+
+.teamDataItem {
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px 0px rgba(121, 33, 33, 0.25);
+	border-radius: 12px 12px 12px 12px;
+	// padding: 20rpx;
+	margin-bottom: 30rpx;
+	padding-bottom: 20rpx;
+
+	.teamTitle {
+		background: url('/static/team/t_title.png') no-repeat;
+		background-size: contain;
+		background-position: center;
+		text-align: center;
+		border-radius: 12px 12px 0px 0px;
+		padding: 20rpx;
+		color: #fff;
+		font-size: 34rpx;
+		font-weight: bold;
+	}
+
+	.teamItem {
+		background: #FFF1E8;
+		padding: 20rpx;
+		border-radius: 10rpx;
+		color: #610B00;
+
+		.value {
+			color: #FB5A0E;
 			font-weight: bold;
 		}
-		.teamItem{
-			background: #FFF1E8;
-			padding: 20rpx;
-			border-radius: 10rpx;
-			color: #610B00;
-			.value{
-				color:#FB5A0E ;
-				font-weight: bold;
-			}
-		}
-		.teamContent{
-			padding: 0  20rpx;
-			display: grid;
-			grid-template-columns: repeat(2,1fr);
-			text-align: center;
+	}
+
+	.teamContent {
+		padding: 0 20rpx;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		text-align: center;
 		gap: 10rpx;
 		margin-top: 20rpx;
-			.teamItem{
-				padding: 10rpx 0;
-				border-radius: 10rpx;
-				.f26{
-					height: 60rpx;
-					line-height: 60rpx;
-				}
-				
+
+		.teamItem {
+			padding: 10rpx 0;
+			border-radius: 10rpx;
+
+			.f26 {
+				display: -webkit-box;
+				-webkit-line-clamp: 1;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				height: 60rpx;
+				line-height: 60rpx;
 			}
+
 		}
 	}
-	.teamTopPort{
-		// background: linear-gradient( 180deg, #FFE863 0%, #FF9A35 100%);
-		background: url('/static/team/teamRe.png') no-repeat ;
-		// background-size: contain;
-		background-size: contain;
-		margin-top: 50rpx;
-		padding: 100rpx  30rpx  60rpx;
-		
-		.bgWhiteBox{
-			display: grid;
-			grid-template-columns: repeat(3,1fr);
-			place-items: center;
-			gap: 16rpx;
-			// background: #fff;
-			border-radius: 20rpx;
-			padding: 10rpx ;
-		}
-		.gridItem{
-			// height: 60rpx;
-			text-align: center;
-			font-size: 26rpx;
-			color:#4B2300 ;
-			.title{
-				height:60rpx;
-				line-height: 30rpx;
-			}
-			.value{
-				color:#FB5A0E ;
-				font-weight: bold;
-				font-size: 28rpx;
-			}
-		}
-	}
-	.btns {
-		// width: 220rpx;
-		height: 80rpx;
+}
+
+.teamTopPort {
+	// background: linear-gradient( 180deg, #FFE863 0%, #FF9A35 100%);
+	background: url('/static/team/teamRe.png') no-repeat;
+	// background-size: contain;
+	background-size: contain;
+	margin-top: 50rpx;
+	padding: 100rpx 30rpx 60rpx;
+
+	.bgWhiteBox {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		place-items: center;
+		gap: 16rpx;
+		// background: #fff;
 		border-radius: 20rpx;
-
-		color: #fff;
-		font-size: 24rpx;
-		padding: 0 30rpx;
-		min-width: 160rpx;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		padding: 10rpx;
 	}
 
-	.sea {
-		background: linear-gradient(270deg, #B20100 0%, #FF7C35 100%);
+	.gridItem {
+		// height: 60rpx;
+		text-align: center;
+		font-size: 26rpx;
+		color: #4B2300;
 
+		.title {
+			height: 60rpx;
+			line-height: 30rpx;
+		}
+
+		.value {
+			color: #FB5A0E;
+			font-weight: bold;
+			font-size: 28rpx;
+		}
 	}
+}
 
-	.sel {
-		background: #fff;
-		color: #000;
+.btns {
+	// width: 220rpx;
+	height: 80rpx;
+	border-radius: 20rpx;
 
-	}
+	color: #fff;
+	font-size: 24rpx;
+	padding: 0 30rpx;
+	min-width: 160rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-	// .teamPage {
-	// 	background: url('/static/team/teamBg.png') no-repeat;
-	// 	background-size: contain;
-	// 	background-position: top;
-	// 	min-height: 100vh;
-	// 	background-color: #FFE0D7;
-	// }
-</style>
+.sea {
+	background: linear-gradient(270deg, #B20100 0%, #FF7C35 100%);
+
+}
+
+.sel {
+	background: #fff;
+	color: #000;
+
+}
+
+// .teamPage {
+// 	background: url('/static/team/teamBg.png') no-repeat;
+// 	background-size: contain;
+// 	background-position: top;
+// 	min-height: 100vh;
+// 	background-color: #FFE0D7;
+// }</style>

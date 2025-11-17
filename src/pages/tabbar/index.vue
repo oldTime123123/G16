@@ -96,15 +96,15 @@
 						</view>
 						<view class="descGridBox ml20 f24 flex1">
 							<view class="descItem text_center">
-								<view>{{ $t('x.a3') }}</view>
+								<view class="show2line">{{ $t('x.a3') }}</view>
 								<view class="mt10 f28 text_bold">{{ item.price + ' ' + currency }}</view>
 							</view>
 							<view class="descItem text_center">
-								<view>{{ $t('x.a4') }}</view>
+								<view class="show2line">{{ $t('x.a4') }}</view>
 								<view class="mt10 f28 text_bold">{{ item.day_max }}</view>
 							</view>
 							<view class="descItem text_center">
-								<view>{{ $t('x.a5') }}</view>
+								<view class="show2line">{{ $t('x.a5') }}</view>
 								<view class="mt10 f28 text_bold">{{ item.bonus + ' ' + currency }}</view>
 							</view>
 							<view class="descItem text_center">
@@ -144,12 +144,12 @@
 
 			<view class="recordBoxContent">
 				<view class="pdlr25">
-					<view class="gridBox2">
+					<view class="gridBox2 show1line">
 						<view :class="recordActInd == '0' ? 'actRecordW' : ''" @click="recordActInd = 0">{{
 							t('index.i_a3')
 						}}
 						</view>
-						<view :class="recordActInd == '1' ? 'actRecordR' : ''" @click="recordActInd = 1">{{t('x.n4')}}
+						<view class="show1line" :class="recordActInd == '1' ? 'actRecordR' : ''" @click="recordActInd = 1">{{t('x.n4')}}
 						</view>
 					</view>
 				</view>
@@ -540,6 +540,20 @@ onLoad((e) => {
 </script>
 
 <style lang="scss" scoped>
+.show1line {
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.show2line {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 .honerItem {
 	color: #610B00;
 
@@ -746,7 +760,7 @@ onLoad((e) => {
 		border-radius: 10rpx;
 
 		view:nth-child(1) {
-			height: 40rpx;
+			height: 50rpx;
 		}
 
 		.text_bold {
