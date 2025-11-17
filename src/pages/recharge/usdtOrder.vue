@@ -65,6 +65,11 @@
 				<view class="mainContentBtn mt22" :style="choStyle" @click="methods.back">
 					{{t('wr.r_r3')}}
 				</view>
+				
+				
+			</view>
+			<view class="richText">
+				<view v-html="richText"></view>
 			</view>
 		</view>
 		<nut-overlay v-model:visible="cancleHandlemMask">
@@ -168,6 +173,7 @@
 	const timer = ref(null)
 	const showTime = ref(0)
 	const rate = ref(0)
+	const richText = ref("")
 	const times = ref(0)
 	const getData = () => {
 		request({
@@ -178,6 +184,7 @@
 				goBack()
 				return false
 			}
+			richText.value = res.desc
 			addresData.value = res.address
 			pageData.value = res.order
 			res.type == 1 ? uploadTxid.value = false : uploadTxid.value = true
@@ -316,8 +323,12 @@
 			line-height: 60rpx;
 			width: 100%;
 			background-color: #FFF8F2;
-			overflow: scroll;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			
 		}
 	}
-
+	::-webkit-scrollbar{
+		display: none;
+	}
 </style>

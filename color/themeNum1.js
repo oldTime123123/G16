@@ -8,9 +8,7 @@ const themeNum1 = {
 		loginBg: {
 			// 'background-image':  " url('/static/themeNum1/index/topBg.png?v1') ",
 			'background-size':' 100% auto',
-			'background-repeat':'no-repeat',
 			'background-color':'#FFF2E2',
-			height: "calc(100vh)",
 		},
 		loginBg2: {
 			background:  " url('/static/loginBg.png')  no-repeat ",
