@@ -18,7 +18,7 @@
 					<view class="mb10">
 						{{index+1}}.
 					</view>
-					<image :src="item" style="width: 100%;height: 50vh;"></image>
+					<image :src="item" style="width: 100%;height: 40vh;"></image>
 				</view>
 			</view>
 		</view>
