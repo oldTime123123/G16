@@ -58,7 +58,7 @@
 			</z-paging>
 		</view>
 
-		<nut-overlay v-if="resPopType>1" v-model:visible="showResPop">
+		<nut-overlay v-model:visible="showResPop">
 			<view class="overlay-body">
 				<view class="overlay-content">
 
@@ -130,7 +130,7 @@ const methods = {
 			value: 2
 		}
 	])
-	const showResPop = ref(true)
+	const showResPop = ref(false)
 	const resPopType = ref(1) //1 success 2 wait
 	const changeTab = item => {
 		actTabVal.value = item.value
