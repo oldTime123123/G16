@@ -227,11 +227,11 @@
 			<view style="height: 40rpx;"></view>
 		</view>
 		<!-- 客服列表 -->
-		<nut-drag :boundary="{ top: 50, left: 30, bottom: 50, right: 30 }" :attract="true" v-if="showService"
+		<!-- <nut-drag :boundary="{ top: 50, left: 30, bottom: 50, right: 30 }" :attract="true" v-if="showService"
 			:style="{ top: '850rpx', right: '30px' }">
 			<image :src="store.$state.imgObj.kefuIcon" mode="widthFix" style="width: 80rpx;height: 80rpx;margin-top: 0;"
 				@click="changePage(3, '../mine/service')"></image>
-		</nut-drag>
+		</nut-drag> -->
 
 		<FullMask v-show="showMask" @confirm="methods.confirm" :maskList="maskContent"></FullMask>
 		<Tabbar :activeIndex="0" />
