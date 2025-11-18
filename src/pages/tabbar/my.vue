@@ -285,7 +285,7 @@
 	const changePage = (url, flag) => {
 		
 		if (flag) {
-			window.open('https://land.rtshops.com')
+			window.open(url)
 			// window.open(url)
 			return false
 		} else {
