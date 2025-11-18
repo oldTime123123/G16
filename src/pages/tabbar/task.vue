@@ -58,7 +58,7 @@
 			</z-paging>
 		</view>
 
-		<nut-overlay v-model:visible="showResPop">
+		<nut-overlay v-if="resPopType>1" v-model:visible="showResPop">
 			<view class="overlay-body">
 				<view class="overlay-content">
 
