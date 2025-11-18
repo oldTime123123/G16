@@ -19,7 +19,7 @@
 					</view>
 					<view class="mt40  flex  " style="flex-shrink: 0;">
 						<view class="">
-							<image :src="item.pic" mode="widthFix" style="width: 160rpx;height: 160rpx;"></image>
+							<image :src="item.little_pic" mode="widthFix" style="width: 160rpx;height: 160rpx;"></image>
 
 							<view class="mt10 text_center">{{ item.title }}</view>
 						</view>
