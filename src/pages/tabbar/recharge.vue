@@ -11,6 +11,18 @@
 		</view>
 		<view class="pdlr49 ">
 
+			<view class="choItem mt38" @click="changeChoosed('showBEP20')" :style="cType == 'showBEP20' ? choStyle : ''"
+				v-if="showBEP20">
+				<view class="flex">
+					<image src="/static/wayIcon/bep.png" mode="widthFix" style="width: 55rpx;height: 55rpx;"></image>
+					<view class="mglr49 f28 center">USDT-BEP20</view>
+				</view>
+
+				<view class="noCho">
+					<image :src="store.$state.imgObj.choosed" mode="widthFix" style="width: 35rpx;height: 35rpx;"
+						v-if="cType == 'showBEP20'"></image>
+				</view>
+			</view>
 
 			<view class="choItem mt38" @click="changeChoosed('usdt')" :style="cType == 'usdt' ? choStyle : ''"
 				v-if="showUsdt">
@@ -42,18 +54,7 @@
 			</view>
 
 
-			<view class="choItem mt38" @click="changeChoosed('showBEP20')" :style="cType == 'showBEP20' ? choStyle : ''"
-				v-if="showBEP20">
-				<view class="flex">
-					<image src="/static/wayIcon/bep.png" mode="widthFix" style="width: 55rpx;height: 55rpx;"></image>
-					<view class="mglr49 f28 center">USDT-BEP20</view>
-				</view>
 
-				<view class="noCho">
-					<image :src="store.$state.imgObj.choosed" mode="widthFix" style="width: 35rpx;height: 35rpx;"
-						v-if="cType == 'showBEP20'"></image>
-				</view>
-			</view>
 
 			<view class="choItem mt38" @click="changeChoosed('showUSDC')" :style="cType == 'showUSDC' ? choStyle : ''"
 				v-if="showUSDC">
@@ -128,160 +129,162 @@
 </template>
 
 <script setup>
-import {request} from '../../../comm/request.ts';
-import {
-	userStore
-} from "@/store/themeNum.js";
-// import {
-// 	Toast
-// } from '@nutui/nutui';
-import {
-	onShow,
-	onLoad
-} from "@dcloudio/uni-app";
-const store = userStore();
-import {
-	useI18n
-} from "vue-i18n";
-const methods = {
-	back() {
-		uni.navigateTo({
-			url: "../tabbar/my"
-		})
-	},
+	import {
+		request
+	} from '../../../comm/request.ts';
+	import {
+		userStore
+	} from "@/store/themeNum.js";
+	// import {
+	// 	Toast
+	// } from '@nutui/nutui';
+	import {
+		onShow,
+		onLoad
+	} from "@dcloudio/uni-app";
+	const store = userStore();
+	import {
+		useI18n
+	} from "vue-i18n";
+	const methods = {
+		back() {
+			uni.navigateTo({
+				url: "../tabbar/my"
+			})
+		},
 
-};
-const {
-	t
-} = useI18n();
+	};
+	const {
+		t
+	} = useI18n();
 
-const choStyle = {
-	background: store.$state.contentColor,
-	animation: '.2s linear all',
-	color: '#fff'
-}
-const cType = ref('usdt')
-const changeChoosed = (type) => {
-	cType.value = type
-}
+	const choStyle = {
+		background: store.$state.contentColor,
+		animation: '.2s linear all',
+		color: '#fff'
+	}
+	const cType = ref('showBEP20')
+	const changeChoosed = (type) => {
+		cType.value = type
+	}
 
-const showUsdt = ref(false)
-const showBank = ref(false)
-const showUSDC = ref(false)
-const showBEP20 = ref(false)
-const showERC20 = ref(false)
-const showUSDCBEP = ref(false)
-const showUSDCERC = ref(false)
-const showUSDCTRC = ref(false)
-const goAdd = ref(false)
-const getData = () => {
-	request({
-		url: 'setting/financeWay',
-		methods: 'get'
-	}).then(res => {
-		let {
-			recharge_type
-		} = res
+	const showUsdt = ref(false)
+	const showBank = ref(false)
+	const showUSDC = ref(false)
+	const showBEP20 = ref(false)
+	const showERC20 = ref(false)
+	const showUSDCBEP = ref(false)
+	const showUSDCERC = ref(false)
+	const showUSDCTRC = ref(false)
+	const goAdd = ref(false)
+	const getData = () => {
+		request({
+			url: 'setting/financeWay',
+			methods: 'get'
+		}).then(res => {
+			let {
+				recharge_type
+			} = res
 
-		if (recharge_type.includes(1)) {
-			showUsdt.value = true
-		}
-		if (recharge_type.includes(2)) {
-			showBank.value = true
-		}
-		if (recharge_type.includes(4)) {
-			showBEP20.value = true
-		}
-		if (recharge_type.includes(5)) {
-			showERC20.value = true
-		}
-		if (recharge_type.includes(6)) {
-			showUSDC.value = true
-		}
-		if (recharge_type.includes(8)) {
-			showUSDCBEP.value = true
-		}
-		if (recharge_type.includes(9)) {
-			showUSDCERC.value = true
-		}
-		if (recharge_type.includes(10)) {
-			showUSDCTRC.value = true
-		}
-		// console.log(res);
-	})
-}
-
-const chooseHandle = () => {
-	let value = cType.value
-	if (value == 'usdt') {
-
-		uni.navigateTo({
-			url: '../recharge/usdtRecharge?needAmount=' + needAmount.value
-		})
-	} else if (value == 'bank') {
-		uni.navigateTo({
-			url: '../recharge/bankRecharge?needAmount=' + needAmount.value
-		})
-	} else if (value == 'showERC20') {
-		uni.navigateTo({
-			url: '../recharge/usdtErcRecharge?needAmount=' + needAmount.value
-		})
-	} else if (value == 'showBEP20') {
-		uni.navigateTo({
-			url: '../recharge/usdtBepRecharge?needAmount=' + needAmount.value
-		})
-	} else if (value == 'showUSDC') {
-		uni.navigateTo({
-			url: '../recharge/usdcRecharge?needAmount=' + needAmount.value
-		})
-	} else if (value == 'showUSDCBEP') {
-		uni.navigateTo({
-			url: '../recharge/usdcBepRecharge?needAmount=' + needAmount.value
-		})
-	} else if (value == 'showUSDCERC') {
-		uni.navigateTo({
-			url: '../recharge/usdcErcRecharge?needAmount=' + needAmount.value
-		})
-	}else if (value == 'showUSDCTRC') {
-		uni.navigateTo({
-			url: '../recharge/usdcTrcRecharge?needAmount=' + needAmount.value
+			if (recharge_type.includes(1)) {
+				showUsdt.value = true
+			}
+			if (recharge_type.includes(2)) {
+				showBank.value = true
+			}
+			if (recharge_type.includes(4)) {
+				showBEP20.value = true
+			}
+			if (recharge_type.includes(5)) {
+				showERC20.value = true
+			}
+			if (recharge_type.includes(6)) {
+				showUSDC.value = true
+			}
+			if (recharge_type.includes(8)) {
+				showUSDCBEP.value = true
+			}
+			if (recharge_type.includes(9)) {
+				showUSDCERC.value = true
+			}
+			if (recharge_type.includes(10)) {
+				showUSDCTRC.value = true
+			}
+			// console.log(res);
 		})
 	}
-}
-const changePage = url => {
-	uni.navigateTo({
-		url
-	})
-}
-const needAmount = ref(0)
-onLoad(e => {
-	if (e.needAmount) {
-		needAmount.value = e.needAmount
+
+	const chooseHandle = () => {
+		let value = cType.value
+		if (value == 'usdt') {
+
+			uni.navigateTo({
+				url: '../recharge/usdtRecharge?needAmount=' + needAmount.value
+			})
+		} else if (value == 'bank') {
+			uni.navigateTo({
+				url: '../recharge/bankRecharge?needAmount=' + needAmount.value
+			})
+		} else if (value == 'showERC20') {
+			uni.navigateTo({
+				url: '../recharge/usdtErcRecharge?needAmount=' + needAmount.value
+			})
+		} else if (value == 'showBEP20') {
+			uni.navigateTo({
+				url: '../recharge/usdtBepRecharge?needAmount=' + needAmount.value
+			})
+		} else if (value == 'showUSDC') {
+			uni.navigateTo({
+				url: '../recharge/usdcRecharge?needAmount=' + needAmount.value
+			})
+		} else if (value == 'showUSDCBEP') {
+			uni.navigateTo({
+				url: '../recharge/usdcBepRecharge?needAmount=' + needAmount.value
+			})
+		} else if (value == 'showUSDCERC') {
+			uni.navigateTo({
+				url: '../recharge/usdcErcRecharge?needAmount=' + needAmount.value
+			})
+		} else if (value == 'showUSDCTRC') {
+			uni.navigateTo({
+				url: '../recharge/usdcTrcRecharge?needAmount=' + needAmount.value
+			})
+		}
 	}
-})
-// 终于可以用了
-onShow(() => {
-	getData()
-})
+	const changePage = url => {
+		uni.navigateTo({
+			url
+		})
+	}
+	const needAmount = ref(0)
+	onLoad(e => {
+		if (e.needAmount) {
+			needAmount.value = e.needAmount
+		}
+	})
+	// 终于可以用了
+	onShow(() => {
+		getData()
+	})
 </script>
 
 <style lang="scss">
-.choItem {
-	height: 100rpx;
-	padding: 0 50rpx;
-	background-color: #ccc;
-	border-radius: 20rpx;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 30rpx;
-	color: #000;
+	.choItem {
+		height: 100rpx;
+		padding: 0 50rpx;
+		background-color: #ccc;
+		border-radius: 20rpx;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 30rpx;
+		color: #000;
 
-	.noCho {
-		width: 35rpx;
-		height: 35rpx;
-		// border: 1px solid #AFAFAF;
-		border-radius: 10rpx;
+		.noCho {
+			width: 35rpx;
+			height: 35rpx;
+			// border: 1px solid #AFAFAF;
+			border-radius: 10rpx;
+		}
 	}
-}
 </style>
