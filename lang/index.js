@@ -1,4 +1,6 @@
-import { createI18n } from "vue-i18n";
+import {
+	createI18n
+} from "vue-i18n";
 import langEn from "./en";
 // import langTw from './tw';
 import langAr from "./ar";
@@ -15,34 +17,44 @@ import nl from "./nl";
 import bg from "./bg";
 import uz from "./uz";
 import uk from "./uk";
+import be from "./be";
+import it from "./it";
+import kk from "./kk";
+import tg from "./tg";
+
 const messages = {
-  // 'tw': langTw,
-  en: langEn,
-  ar: langAr,
-  az: langAz,
-  ru: langRu,
-  fa: langFa,
-  es: langEs,
-  de: langDe,
-  fr: langFr,
-  nl: nl,
-  bg: bg,
-  uz: uz,
-  uk: uk,
+	// 'tw': langTw,
+	en: langEn,
+	ar: langAr,
+	az: langAz,
+	ru: langRu,
+	fa: langFa,
+	es: langEs,
+	de: langDe,
+	fr: langFr,
+	nl: nl,
+	bg: bg,
+	uz: uz,
+	uk: uk,
+	be: be,
+	it: it,
+	kk: kk,
+	tg: tg
+
 };
 
 let cur_lang = uni.getStorageSync("lang");
 
 if (cur_lang == "ar") {
-  let eles = document.querySelector("html");
-  document.querySelector("html").setAttribute("dir", "rtl");
+	let eles = document.querySelector("html");
+	document.querySelector("html").setAttribute("dir", "rtl");
 }
 
 const i18n = createI18n({
-  globalInjection: true, //全局$t 生效
-  locale: uni.getStorageSync("lang") || "en",
-  messages,
-  legacy: false,
+	globalInjection: true, //全局$t 生效
+	locale: uni.getStorageSync("lang") || "en",
+	messages,
+	legacy: false,
 });
 
 export default i18n;
