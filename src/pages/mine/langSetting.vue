@@ -10,8 +10,7 @@
 			<view class="mt80 pb50">
 				<view class="kefuItem flex col_center" v-for="(item,index) in langList" @click="setHandle(index)"
 					:style="langInd == index?choStyle:''">
-					<image :src="item.link"  style="width: 100rpx; height: 60rpx;">
-					</image>
+					<span :class="`fi ${ 'fi-' + item.short }`" style="width: 60rpx;height: 60rpx;"></span>
 					<view class="mglr40 f40">
 						{{item.name}}
 					</view>
