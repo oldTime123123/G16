@@ -1,4 +1,5 @@
 <template>
+	<!-- ick="changeTab(item)">{{item.name}}</v -->
 	<view class="">
 		<view class="text_center  taskTop">
 			<view class="topNavBar pdlr30" style="height: 100rpx;">
@@ -64,8 +65,8 @@
 
 					<view class="title center">{{resPopType<2?t('x.ta4'):t('x.ta5')}}</view>
 				<!-- 	<view class="content center">
-						<image class="c_img" v-if="resPopType <2" src="/static/task/p_s.png" mode="widthFix"></image>
-						<image class="p_img" v-else src="/static/task/p_w.png" mode="widthFix"></image>
+						<image class="c_img" v-if="resPopType <2" src="/static/task/p_s-.png" mode="widthFix"></image>
+						<image class="p_img" v-else src="/static/task/p_w-.png" mode="widthFix"></image>
 					</view> -->
 					<view style="height: 260rpx;"></view>
 					<view class="center">
@@ -84,7 +85,7 @@
 						</view>
 					</view>
 					<view class="closeBtn closeBtn2">
-						<image src="/static/task/p_close.png" @click="showResPop = false" mode="widthFix"
+						<image src="/static/task/p_close-.png" @click="showResPop = false" mode="widthFix"
 							style="height: 80rpx; width: 80rpx;"></image>
 					</view>
 				</view>
@@ -266,7 +267,7 @@ const methods = {
 		.overlay-content {
 			width: 600rpx;
 			height: 400rpx;
-			background: url('/static/task/mg1.png') no-repeat;
+			background: url('/static/task/mg1-.png') no-repeat;
 			background-size: cover;
 			background-position: center;
 			text-align: center;
@@ -316,7 +317,7 @@ const methods = {
 			}
 
 			.confirmBtn {
-				background: url('/static/task/maskBtn.png') no-repeat;
+				background: url('/static/task/maskBtn-.png') no-repeat;
 				height: 100rpx;
 				width: 400rpx;
 				background-size: contain;
@@ -390,7 +391,7 @@ const methods = {
 				color: #FF7C35;
 			}
 	.listNameT{
-			background: url('../../static/task/nameT.png') no-repeat;
+			background: url('../../static/task/nameT-.png') no-repeat;
 			height: 50rpx;
 			background-size: cover;
 			line-height: 50rpx;

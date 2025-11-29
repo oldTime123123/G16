@@ -1,11 +1,12 @@
 <template>
+	<!-- oItem mt38" @click="changeChoosed('showBEP20')" :style="cType == 'showBEP20' -->
 	<view :style="store.$state.imgObj.loginBg">
 		<view class="between topNavBar">
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
 				@click="methods.back"></image>
 			{{ t('wr.w_a1') }}
 			<view style="width: 50rpx;" class="center">
-				<image src="/static/record.png" style="width: 48rpx;height: 48rpx;"
+				<image src="/static/record-.png" style="width: 48rpx;height: 48rpx;"
 					@click="goRecord('/pages/record/withdrawRecord')"></image>
 			</view>
 		</view>
@@ -14,7 +15,7 @@
 			<view class="choItem mt38" @click="changeChoosed('showBEP20')" :style="cType == 'showBEP20' ? choStyle : ''"
 				v-if="showBEP20">
 				<view class="flex">
-					<image src="/static/wayIcon/bep.png" mode="widthFix" style="width: 55rpx;height: 55rpx;"></image>
+					<image src="/static/wayIcon/bep-.png" mode="widthFix" style="width: 55rpx;height: 55rpx;"></image>
 					<view class="mglr49 f28 center">USDT-BEP20</view>
 				</view>
 
@@ -27,7 +28,7 @@
 			<view class="choItem mt38" @click="changeChoosed('usdt')" :style="cType == 'usdt' ? choStyle : ''"
 				v-if="showUsdt">
 				<view class="flex">
-					<image src="/static/wayIcon/usdt.png" mode="widthFix" style="width: 55rpx;height: 55rpx;"></image>
+					<image src="/static/wayIcon/usdt-.png" mode="widthFix" style="width: 55rpx;height: 55rpx;"></image>
 					<view class="mglr49 f28 center">USDT-TRC20</view>
 				</view>
 
@@ -45,7 +46,7 @@
 			<view class="choItem mt38" @click="changeChoosed('showERC20')" :style="cType == 'showERC20' ? choStyle : ''"
 				v-if="showERC20">
 				<view class="flex">
-					<image src="/static/wayIcon/erc.png" mode="widthFix" style="width: 55rpx;height: 55rpx;"></image>
+					<image src="/static/wayIcon/erc-.png" mode="widthFix" style="width: 55rpx;height: 55rpx;"></image>
 					<view class="mglr49 f28 center">USDT-ERC20</view>
 				</view>
 
@@ -61,7 +62,7 @@
 			<view class="choItem mt38" @click="changeChoosed('showUSDC')" :style="cType == 'showUSDC' ? choStyle : ''"
 				v-if="showUSDC">
 				<view class="flex">
-					<image src="/static/usdcp.png" mode="widthFix" style="width: 55rpx;height: 55rpx;">
+					<image src="/static/usdcp-.png" mode="widthFix" style="width: 55rpx;height: 55rpx;">
 					</image>
 					<view class="mglr49 f28 center">USDC_Polygon</view>
 				</view>
@@ -74,7 +75,7 @@
 			<view class="choItem mt38" @click="changeChoosed('showUSDCTRC')"
 				:style="cType == 'showUSDCTRC' ? choStyle : ''" v-if="showUSDCTRC">
 				<view class="flex">
-					<image src="/static/wayIcon/USDC-TRC20.png?v=1" mode="widthFix" style="width: 55rpx;height: 55rpx;">
+					<image src="/static/wayIcon/USDC-TRC20-.png?v=1" mode="widthFix" style="width: 55rpx;height: 55rpx;">
 					</image>
 					<view class="mglr49 f28 center">USDC-TRC20</view>
 				</view>
@@ -87,7 +88,7 @@
 			<view class="choItem mt38" @click="changeChoosed('showUSDCErc')"
 				:style="cType == 'showUSDCErc' ? choStyle : ''" v-if="showUSDCErc">
 				<view class="flex">
-					<image src="/static/USDC-ERC.png?v=1" mode="widthFix" style="width: 55rpx;height: 55rpx;"></image>
+					<image src="/static/USDC-ERC-.png?v=1" mode="widthFix" style="width: 55rpx;height: 55rpx;"></image>
 					<view class="mglr49 f28 center">USDC-ERC20</view>
 				</view>
 
@@ -99,7 +100,7 @@
 			<view class="choItem mt38" @click="changeChoosed('showUSDCBep')"
 				:style="cType == 'showUSDCBep' ? choStyle : ''" v-if="showUSDCBep">
 				<view class="flex">
-					<image src="/static/USDC-BEP20.png?v=1" mode="widthFix" style="width: 55rpx;height: 55rpx;"></image>
+					<image src="/static/USDC-BEP20-.png?v=1" mode="widthFix" style="width: 55rpx;height: 55rpx;"></image>
 					<view class="mglr49 f28 center">USDC-BEP20</view>
 				</view>
 

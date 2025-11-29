@@ -1,4 +1,5 @@
 <template>
+	<!-- \lick="methods.back"></im -->
 	<view :style="store.$state.imgObj.loginBg">
 	
 	<view class="between topNavBar">

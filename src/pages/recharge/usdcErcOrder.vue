@@ -1,4 +1,6 @@
 <template>
+	<!-- view class="iTitle">USDC</view>
+							<view :style="topItemStyle">{{pageData. -->
 	<view :style="store.$state.imgObj.loginBg">
 
 

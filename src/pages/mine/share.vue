@@ -1,4 +1,5 @@
 <template>
+	<!-- store.$state.imgObj.backIcon" mode="widthFix" style="widt -->
 	<view :style="store.$state.imgObj.loginBg">
 
 		<view class="pdlr37 pt33">
@@ -27,16 +28,16 @@
 				<view class="mt37 f36" :style="{color:store.$state.contentColor}">
 					{{inviteCode}}
 				</view>
-				<!-- <image src="../../static/mine/erweima.png" mode="widthFix" style="width: 400rpx;"></image> -->
+				<!-- <image src="../../static/mine/erweima-.png" mode="widthFix" style="width: 400rpx;"></image> -->
 			</view>
 
 			<view class="btns" @click="copyHandle" :style="{background:store.$state.contentColor}">
 				{{t('all.a_d1')}}
 			</view>
 			<view class="center">
-				<!-- <image src="../../static/themeNum1/shareB.png"  style="width: 402rpx;height: 341rpx;">
+				<!-- <image src="../../static/themeNum1/shareB-.png"  style="width: 402rpx;height: 341rpx;">
 				</image> -->
-				 <!-- <nut-image src="//img10.360buyimg.com/ling/jfs/t1/181258/24/10385/53029/60d04978Ef21f2d42/92baeb21f907cd24.jpg" width="100" height="100"></nut-image> -->
+				 <!-- <nut-image src="//img10.360buyimg.com/ling/jfs/t1/181258/24/10385/53029/60d04978Ef21f2d42/92baeb21f907cd24-.png" width="100" height="100"></nut-image> -->
 			</view>
 			<!-- <view style="height: 50rpx;"></view> -->
 		</view>
@@ -121,7 +122,7 @@
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		background: url('../../static/themeNum1/shareBox.png') no-repeat 100%/100%;
+		background: url('../../static/themeNum1/shareBox-.png') no-repeat 100%/100%;
 		height: 700rpx;
 		width: 100%;
 	}

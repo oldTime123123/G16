@@ -1,13 +1,14 @@
 <template>
-	<view style="background: url('/static/actIcon/sign/signBg.png') no-repeat 100%;">
+	<!-- <image src="/static/actIcon/back-.png" mode="widthFix" style="width: 48rpx;height: 36rpx;" -->
+	<view style="background: url('/static/actIcon/sign/signBg-.png') no-repeat 100%;">
 		<!-- 导航栏 -->
 		<view class="pdlr50 pt33">
 
 			<view class=" between">
-				<image src="/static/actIcon/back.png" mode="widthFix" style="width: 48rpx;height: 36rpx;"
+				<image src="/static/actIcon/back-.png" mode="widthFix" style="width: 48rpx;height: 36rpx;"
 					@click="methods.back"></image>
 
-				<image src="/static/actIcon/record.png" mode="widthFix"
+				<image src="/static/actIcon/record-.png" mode="widthFix"
 					style="width: 48rpx;height: 48rpx;" @click="changePage"></image>
 			</view>
 			<view class="f50 mt60 text_bold" :style="{color:store.$state.secondColor}">{{t('act.a_s1')}}</view>
@@ -27,7 +28,7 @@
 				<view class=" isSignC" v-else :style="{background:store.$state.btnDis}">
 					{{t('act.a_s1')}}
 				</view>
-				<!-- <image src="../../static/mine/signIn.png" mode="widthFix" style="width: 429rpx;"></image> -->
+				<!-- <image src="../../static/mine/signIn-.png" mode="widthFix" style="width: 429rpx;"></image> -->
 			</view>
 			<view class="mt57 botBox">
 				<view class="center pt40">
@@ -59,7 +60,7 @@
 				</view>
 			</view>
 
-			<image src="../../static/closeBtn.png" class="mt30" mode="widthFix" style="width: 80rpx;"
+			<image src="../../static/closeBtn-.png" class="mt30" mode="widthFix" style="width: 80rpx;"
 				@click="closeHandle"></image>
 		</view>
 	<Loading ref="showLoading"></Loading>
@@ -178,13 +179,13 @@
 			.signSuccess {
 				width: 518rpx;
 				height: 450rpx;
-				background: url(../../static/actIcon/sign/signSuccess.png) no-repeat 100%/100%;
+				background: url(../../static/actIcon/sign/signSuccess-.png) no-repeat 100%/100%;
 			}
 
 			.signRe {
 				width: 518rpx;
 				height: 450rpx;
-				background: url(../../static/actIcon/sign/signed.png) no-repeat 100%/100%;
+				background: url(../../static/actIcon/sign/signed-.png) no-repeat 100%/100%;
 			}
 		}
 

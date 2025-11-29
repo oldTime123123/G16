@@ -1,4 +1,6 @@
 <template>
+	<!-- <view class="mt28 f26 withdrawAll" :style="{color:store.$state.contentColor}"
+						@click="inputNum = pageData.balance_max">{{t('wr.w_a3')}}</view> -->
 	<view :style="store.$state.imgObj.loginBg">
 		<view class="between topNavBar">
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
@@ -61,10 +63,10 @@
 						<input class="inp " type="safe-password" password="true" v-model="fundPwd"
 							:placeholder="t('wr.w_a10')" v-if="showNewPwd1">
 						<input class="inp " type="safe-password" v-model="fundPwd" :placeholder="t('wr.w_a10')" v-else>
-						<image v-if="showNewPwd1" src="../../static/themeNum1/icon/closeEye.png" class="pwdEye"
+						<image v-if="showNewPwd1" src="../../static/themeNum1/icon/closeEye-.png" class="pwdEye"
 							style="width: 29rpx;height: 16rpx;" @click="methods.openPwdHandle('showNewPwd1')"></image>
 
-						<image v-else src="../../static/themeNum1/icon/openEye.png" class="pwdEye"
+						<image v-else src="../../static/themeNum1/icon/openEye-.png" class="pwdEye"
 							style="width: 29rpx;height: 25rpx;" @click="methods.openPwdHandle('showNewPwd1')"></image>
 					</view>
 

@@ -1,4 +1,5 @@
 <template>
+	<!-- <image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;" -->
 	<view :style="store.$state.imgObj.loginBg">
 
 		<view class="pdlr35 pt33 pb50">

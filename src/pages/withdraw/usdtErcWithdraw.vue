@@ -1,4 +1,8 @@
 <template>
+	<!-- style="store.$state.imgObj.loginBg">
+	<view class="between topNavBar">
+		<image :src="store.$state.imgObj.backIcon" mode="w -->
+
 	<view :style="store.$state.imgObj.loginBg">
 		<view class="between topNavBar">
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
@@ -45,7 +49,8 @@
 				</view>
 
 				<view class="mt38">
-					<view class="f34  text_bold" :style="{ color: store.$state.secondColor }">{{ t('wr.w_u3') }}</view>
+					<view class="f34  text_bold" :style="{ color: store.$state.secondColor }">{{ t('wr.w_u3') }}
+					</view>
 					<view class="mt34 otpEl">
 						<input class="inp" placeholder-class="plo" :placeholder="t('wr.w_u4')" :disabled="true"
 							:value="pageData.user_link">
@@ -57,18 +62,21 @@
 				</view>
 
 				<view class="mt38">
-					<view class="f34  text_bold" :style="{ color: store.$state.secondColor }">{{ t('login.l_l5') }}</view>
+					<view class="f34  text_bold" :style="{ color: store.$state.secondColor }">{{ t('login.l_l5') }}
+					</view>
 					<view class="mt34  passwordInp" v-if="!showInp">
 
 						<input class="inp " type="safe-password" placeholder-class="plo" password="true"
 							v-model="fundPwd" :placeholder="t('login.l_l5')" v-if="showNewPwd1">
 						<input class="inp " placeholder-class="plo" type="safe-password" v-model="fundPwd"
 							:placeholder="t('login.l_l5')" v-else>
-						<image v-if="showNewPwd1" src="../../static/themeNum1/icon/closeEye.png" class="pwdEye"
-							style="width: 29rpx;height: 16rpx;" @click="methods.openPwdHandle('showNewPwd1')"></image>
+						<image v-if="showNewPwd1" src="../../static/themeNum1/icon/closeEye-.png" class="pwdEye"
+							style="width: 29rpx;height: 16rpx;" @click="methods.openPwdHandle('showNewPwd1')">
+						</image>
 
-						<image v-else src="../../static/themeNum1/icon/openEye.png" class="pwdEye openEye"
-							style="width: 29rpx;height: 25rpx;" @click="methods.openPwdHandle('showNewPwd1')"></image>
+						<image v-else src="../../static/themeNum1/icon/openEye-.png" class="pwdEye openEye"
+							style="width: 29rpx;height: 25rpx;" @click="methods.openPwdHandle('showNewPwd1')">
+						</image>
 					</view>
 
 					<view class="mt34  passwordInp otpEl" v-else>
@@ -96,7 +104,7 @@
 </template>
 
 <script setup>
-import {request} from '../../../comm/request.ts';
+import { request } from '../../../comm/request.ts';
 import {
 	userStore
 } from "@/store/themeNum.js";

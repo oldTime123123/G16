@@ -1,4 +1,5 @@
 <template>
+	<!-- lass="withTitle" :style="choStyle">{{ t('wr.w_u1') -->
 	<view :style="store.$state.imgObj.loginBg">
 		<view class="between topNavBar">
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
@@ -64,10 +65,10 @@
 							v-model="fundPwd" :placeholder="t('login.l_l5')" v-if="showNewPwd1">
 						<input class="inp " placeholder-class="plo" type="safe-password" v-model="fundPwd"
 							:placeholder="t('login.l_l5')" v-else>
-						<image v-if="showNewPwd1" src="../../static/themeNum1/icon/closeEye.png" class="pwdEye"
+						<image v-if="showNewPwd1" src="../../static/themeNum1/icon/closeEye-.png" class="pwdEye"
 							style="width: 29rpx;height: 16rpx;" @click="methods.openPwdHandle('showNewPwd1')"></image>
 
-						<image v-else src="../../static/themeNum1/icon/openEye.png" class="pwdEye openEye"
+						<image v-else src="../../static/themeNum1/icon/openEye-.png" class="pwdEye openEye"
 							style="width: 29rpx;height: 25rpx;" @click="methods.openPwdHandle('showNewPwd1')"></image>
 					</view>
 

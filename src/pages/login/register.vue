@@ -1,4 +1,5 @@
 <template>
+	<!-- w class="pdlr35 pt33" -->
 	<view :style="store.$state.imgObj.loginBg2">
 		<view class="pdlr35 pt33">
 			<view class="flex between">
@@ -23,7 +24,7 @@
 						<view class="center" @click="openPicker" style="color: #000; ">
 							{{country_code.country_code}}
 							<view class="ml10 center" style="width: 40rpx;">
-								<image src="../../static/themeNum1/icon/downSel.png"
+								<image src="../../static/themeNum1/icon/downSel-.png"
 									style="width: 30rpx;height: 20rpx;"></image>
 							</view>
 						</view>
@@ -43,11 +44,11 @@
 								:placeholder="t('login.l_l5')" v-else>
 
 
-							<image src="../../static/themeNum1/icon/openEye.png" class="pwdEye"
+							<image src="../../static/themeNum1/icon/openEye-.png" class="pwdEye"
 								style="width: 50rpx;height: 50rpx;" @click="methods.openPwdHandle('first')"
 								v-if="!openPwd"></image>
 
-							<image src="../../static/themeNum1/icon/closeEye.png" class="pwdEye"
+							<image src="../../static/themeNum1/icon/closeEye-.png" class="pwdEye"
 								style="width: 50rpx;height: 50rpx;" @click="methods.openPwdHandle('first')" v-else>
 							</image>
 						</view>
@@ -63,10 +64,10 @@
 							<input class="loginInp " type="safe-password" v-model="regisForm.password2"
 								:placeholder="t('login.l_r3')" v-else>
 
-							<image src="../../static/themeNum1/icon/openEye.png" class="pwdEye"
+							<image src="../../static/themeNum1/icon/openEye-.png" class="pwdEye"
 								style="width: 50rpx;height: 50rpx;" @click="methods.openPwdHandle('second')"
 								v-if="!openCpwd"></image>
-							<image src="../../static/themeNum1/icon/closeEye.png" class="pwdEye"
+							<image src="../../static/themeNum1/icon/closeEye-.png" class="pwdEye"
 								style="width: 50rpx;height: 50rpx;" @click="methods.openPwdHandle('second')" v-else>
 							</image>
 						</view>
@@ -103,7 +104,7 @@
 				<view class="loginBtn center f36" 
 					@click="methods.regisHandle(methods.regisHandle1)">
 					{{t('login.l_r8')}}
-					<image src="/static/themeNum1/right.png" class="ml40" mode="widthFix" style="width: 60rpx;"></image>
+					<image src="/static/themeNum1/right-.png" class="ml40" mode="widthFix" style="width: 60rpx;"></image>
 				</view>
 				<!-- 登录按钮 -->
 				<view class="text_center mt34 f26 pb10 " @click="methods.changePage('./login')">
@@ -507,7 +508,7 @@ const searchCode = ref([])
 
 <style lang="scss">
 	.loginBtn{
-		background: url('../../static/themeNum1/btnBg.png') no-repeat;
+		background: url('../../static/themeNum1/btnBg-.png') no-repeat;
 		background-size: 100%;
 		width: 65%;
 		height: 150rpx;

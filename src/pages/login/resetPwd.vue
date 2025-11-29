@@ -1,4 +1,5 @@
 <template>
+	<!-- style="width: 48rpx;h -->
 	<view :style="store.$state.imgObj.loginBg2">
 		<view class="pdlr35 pt33">
 			<view class="flex between">
@@ -40,11 +41,11 @@
 								:placeholder="t('login.l_l5')" v-else>
 
 
-							<image src="../../static/themeNum1/icon/openEye.png" class="pwdEye"
+							<image src="../../static/themeNum1/icon/openEye-.png" class="pwdEye"
 								style="width: 29rpx;height: 25rpx;" @click="methods.openPwdHandle('first')"
 								v-if="!openPwd"></image>
 
-							<image src="../../static/themeNum1/icon/closeEye.png" class="pwdEye"
+							<image src="../../static/themeNum1/icon/closeEye-.png" class="pwdEye"
 								style="width: 29rpx;height: 16rpx;" @click="methods.openPwdHandle('first')" v-else>
 							</image>
 						</view>

@@ -3,7 +3,7 @@
 
 		<view class="center">
 			<view class="luck-list"
-				style=" background: url(../../static/actIcon/zhuanpan1/mainBox.png) no-repeat 100%/100%;">
+				style=" background: url(../../static/actIcon/zhuanpan1/mainBox-.png) no-repeat 100%/100%;">
 				<view v-for="(item, index) in AwardList" :key="index" class="cell-item"
 					:class="index == 4 || index === sel ? 'y-b' : 'w-b'" @tap="begin(index)">
 					<view class="cell-content" :class="index === sel ? 'y' : 'w'">

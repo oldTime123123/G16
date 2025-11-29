@@ -53,34 +53,34 @@
 			const activeIndex = ref(props.activeIndex)
 			const tabBarList = ref([{
 					"pagePath": "/pages/tabbar/index",
-					"iconPath": "/static/themeNum1/tabbar/t1.png",
-					"selectedIconPath": "/static/themeNum1/tabbar/t11.png",
+					"iconPath": "/static/themeNum1/tabbar/t1-.png",
+					"selectedIconPath": "/static/themeNum1/tabbar/t11-.png",
 					"text": t('x.a2')
 				},
 				{
 					"pagePath": "/pages/tabbar/fund",
-					"iconPath": "/static/themeNum1/tabbar/t2.png",
-					"selectedIconPath": "/static/themeNum1/tabbar/t22.png",
+					"iconPath": "/static/themeNum1/tabbar/t2-.png",
+					"selectedIconPath": "/static/themeNum1/tabbar/t22-.png",
 					"text": t('x.b1')
 				},
 
 				{
 					"pagePath": "/pages/tabbar/team",
-					"iconPath": "/static/themeNum1/tabbar/t3.png",
-					"selectedIconPath": "/static/themeNum1/tabbar/t33.png",
+					"iconPath": "/static/themeNum1/tabbar/t3-.png",
+					"selectedIconPath": "/static/themeNum1/tabbar/t33-.png",
 					"text": t('x.a12')
 				},
 
 				{
 					"pagePath": "/pages/tabbar/level",
-					"iconPath": "/static/themeNum1/tabbar/t4.png",
-					"selectedIconPath": "/static/themeNum1/tabbar/t44.png",
+					"iconPath": "/static/themeNum1/tabbar/t4-.png",
+					"selectedIconPath": "/static/themeNum1/tabbar/t44-.png",
 					"text": t('x.a9')
 				},
 				{
 					"pagePath": "/pages/tabbar/my",
-					"iconPath": "/static/themeNum1/tabbar/t5.png",
-					"selectedIconPath": "/static/themeNum1/tabbar/t55.png",
+					"iconPath": "/static/themeNum1/tabbar/t5-.png",
+					"selectedIconPath": "/static/themeNum1/tabbar/t55-.png",
 					"text": t('x.a10')
 
 				}

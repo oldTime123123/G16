@@ -1,6 +1,6 @@
 <template>
 
-
+<!-- adwdwad wadwad -->
 	<view :style="store.$state.imgObj.loginBg">
 <view class="between topNavBar">
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
@@ -48,10 +48,10 @@
 		t
 	} = useI18n();
 	const dataList = [
-		"/static/downLoad/1.png",
-		"/static/downLoad/2.png",
-		"/static/downLoad/3.png",
-		"/static/downLoad/4.png",
+		"/static/downLoad/1-.png",
+		"/static/downLoad/2-.png",
+		"/static/downLoad/3-.png",
+		"/static/downLoad/4-.png",
 	]
 	const back = ()=>{
 		history.back()

@@ -1,4 +1,6 @@
 <template>
+		<!-- @click="methods.back"></image>
+			{{t('wr.r_r1')}} -->
 	<view :style="store.$state.imgObj.loginBg">
 
 		<view class="between topNavBar">

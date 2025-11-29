@@ -1,17 +1,18 @@
 <template>
+	<!-- ss="inp " type="safe-password" v-model="formData.o -->
 	<view :style="store.$state.imgObj.loginBg">
-<view class="between topNavBar">
+		<view class="between topNavBar">
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
 				@click="methods.back"></image>
-			{{t('inp.a_b3')}}
+			{{ t('inp.a_b3') }}
 			<view style="width: 50rpx;"></view>
 		</view>
-		<view class="pdlr35 pt33" :style="{color:store.$state.secondColor}">
+		<view class="pdlr35 pt33" :style="{ color: store.$state.secondColor }">
 
 
 			<view class="mt30">
 				<view class="pl14">
-					{{t('inp.a_b4')}}
+					{{ t('inp.a_b4') }}
 				</view>
 				<view class="mt34  passwordInp">
 					<input class="inp " type="safe-password" password="true" v-model="formData.old_password"
@@ -19,17 +20,17 @@
 					<input class="inp " type="safe-password" v-model="formData.old_password"
 						:placeholder="t('inp.a_b5')" v-else placeholder-class="plo">
 
-					<image v-if="showOld" src="../../static/themeNum1/icon/closeEye.png" class="pwdEye"
+					<image v-if="showOld" src="../../static/themeNum1/icon/closeEye-.png" class="pwdEye"
 						style="width: 50rpx;height: 50rpx;" @click="methods.openPwdHandle('showOld')"></image>
 
-					<image v-else src="../../static/themeNum1/icon/openEye.png" class="pwdEye"
+					<image v-else src="../../static/themeNum1/icon/openEye-.png" class="pwdEye"
 						style="width: 50rpx;height: 50rpx;" @click="methods.openPwdHandle('showOld')"></image>
 				</view>
 			</view>
 
 			<view class="mt38">
 				<view class="pl14">
-					{{t('inp.a_b6')}}
+					{{ t('inp.a_b6') }}
 				</view>
 
 				<view class="mt34  passwordInp">
@@ -37,26 +38,26 @@
 						:placeholder="t('inp.a_b7')" v-if="showNewPwd1" placeholder-class="plo">
 					<input class="inp " type="safe-password" v-model="formData.password" placeholder-class="plo"
 						:placeholder="t('inp.a_b7')" v-else>
-					<image v-if="showNewPwd1" src="../../static/themeNum1/icon/closeEye.png" class="pwdEye"
+					<image v-if="showNewPwd1" src="../../static/themeNum1/icon/closeEye-.png" class="pwdEye"
 						style="width: 50rpx;height: 50rpx;" @click="methods.openPwdHandle('showNewPwd1')"></image>
 
-					<image v-else src="../../static/themeNum1/icon/openEye.png" class="pwdEye"
+					<image v-else src="../../static/themeNum1/icon/openEye-.png" class="pwdEye"
 						style="width: 50rpx;height: 50rpx;" @click="methods.openPwdHandle('showNewPwd1')"></image>
 				</view>
 			</view>
 
 			<view class="mt38">
 				<view class="pl14">
-					{{t('inp.a_b8')}}
+					{{ t('inp.a_b8') }}
 				</view>
 				<view class="mt34  passwordInp">
 					<input class="inp " type="safe-password" password="true" v-model="formData.password2"
 						:placeholder="t('inp.a_b9')" placeholder-class="plo" v-if="showNewPwd2">
 					<input class="inp " placeholder-class="plo" type="safe-password" v-model="formData.password2"
 						:placeholder="t('inp.a_b9')" v-else>
-					<image v-if="showNewPwd2" src="../../static/themeNum1/icon/closeEye.png" class="pwdEye"
+					<image v-if="showNewPwd2" src="../../static/themeNum1/icon/closeEye-.png" class="pwdEye"
 						style="width: 50rpx;height: 50rpx;" @click="methods.openPwdHandle('showNewPwd2')"></image>
-					<image v-else src="../../static/themeNum1/icon/openEye.png" class="pwdEye"
+					<image v-else src="../../static/themeNum1/icon/openEye-.png" class="pwdEye"
 						style="width: 50rpx;height: 50rpx;" @click="methods.openPwdHandle('showNewPwd2')"></image>
 				</view>
 			</view>
@@ -68,9 +69,9 @@
 
 			<!-- 登录按钮 -->
 			<view class="mainContentBtn f36"
-				:style="showTag?{background:store.$state.contentColor,}:{background:store.$state.btnDis}"
+				:style="showTag ? { background: store.$state.contentColor, } : { background: store.$state.btnDis }"
 				@click="methods.saveHandle">
-				{{ t('inp.i_s1')}}
+				{{ t('inp.i_s1') }}
 			</view>
 
 			<view style="height: 50rpx;"></view>
@@ -80,127 +81,127 @@
 </template>
 
 <script setup>
-	import {request} from '../../../comm/request.ts';
-	import {
-		userStore
-	} from "@/store/themeNum.js";
-	import {
-		Toast
-	} from '@nutui/nutui';
-	import {
-		onShow,
-		onLoad
-	} from "@dcloudio/uni-app";
-	const store = userStore();
-	const showLoading = ref(null)
-	import {
-		useI18n
-	} from 'vue-i18n'
+import { request } from '../../../comm/request.ts';
+import {
+	userStore
+} from "@/store/themeNum.js";
+import {
+	Toast
+} from '@nutui/nutui';
+import {
+	onShow,
+	onLoad
+} from "@dcloudio/uni-app";
+const store = userStore();
+const showLoading = ref(null)
+import {
+	useI18n
+} from 'vue-i18n'
 
-	const {
-		t
-	} = useI18n()
-	const methods = {
-		back() {
+const {
+	t
+} = useI18n()
+const methods = {
+	back() {
+		history.back()
+	},
+	saveHandle() {
+		if (!formData.value.old_password) {
+			Toast.text(t('inp.a_b10'));
+			return false
+		}
+		if (formData.value.password.length < 6 || formData.value.password.length > 24) {
+			Toast.text(t('login.l_r14'))
+			return false
+		}
+		if (formData.value.password == formData.value.old_password) {
+			Toast.text(t('inp.a_b11'));
+			return false
+		}
+		if (formData.value.password !== formData.value.password2) {
+			Toast.text(t('inp.a_b12'));
+			return false
+		}
+		showLoading.value.loading = true
+		setTimeout(() => {
+
+			methods.saveHandle1()
+		}, 2000)
+	},
+	saveHandle1() {
+		request({
+			methods: 'post',
+			url: 'user/attribute/password',
+			data: formData.value
+		}).then(res => {
+			showLoading.value.loading = false
+			Toast.text(t('inp.i_s2'));
 			history.back()
-		},
-		saveHandle() {
-			if (!formData.value.old_password) {
-				Toast.text(t('inp.a_b10'));
-				return false
-			}
-			if (formData.value.password.length < 6 || formData.value.password.length > 24) {
-				Toast.text(t('login.l_r14'))
-				return false
-			}
-			if (formData.value.password == formData.value.old_password) {
-				Toast.text(t('inp.a_b11'));
-				return false
-			}
-			if (formData.value.password !== formData.value.password2) {
-				Toast.text(t('inp.a_b12'));
-				return false
-			}
-			showLoading.value.loading = true
-			setTimeout(() => {
 
-				methods.saveHandle1()
-			}, 2000)
-		},
-		saveHandle1() {
-			request({
-				methods: 'post',
-				url: 'user/attribute/password',
-				data: formData.value
-			}).then(res => {
-				showLoading.value.loading = false
-				Toast.text(t('inp.i_s2'));
-				history.back()
-
-			}).catch(err => {
-				showLoading.value.loading = false
-				Toast.text(err.message);
-			})
-			// Toast.text('保存成功');
-		},
-		openPwdHandle(type) {
-			if (type == 'showOld') {
-				showOld.value = !showOld.value
-			} else if (type == 'showNewPwd1') {
-				showNewPwd1.value = !showNewPwd1.value
-			} else if (type == 'showNewPwd2') {
-				showNewPwd2.value = !showNewPwd2.value
-			}
+		}).catch(err => {
+			showLoading.value.loading = false
+			Toast.text(err.message);
+		})
+		// Toast.text('保存成功');
+	},
+	openPwdHandle(type) {
+		if (type == 'showOld') {
+			showOld.value = !showOld.value
+		} else if (type == 'showNewPwd1') {
+			showNewPwd1.value = !showNewPwd1.value
+		} else if (type == 'showNewPwd2') {
+			showNewPwd2.value = !showNewPwd2.value
 		}
-	};
+	}
+};
 
 
-	const formData = ref({
-		old_password: '',
-		password: '',
-		password2: '',
-		type: 0
-	})
+const formData = ref({
+	old_password: '',
+	password: '',
+	password2: '',
+	type: 0
+})
 
-	const showOld = ref(true)
-	const showNewPwd1 = ref(true)
-	const showNewPwd2 = ref(true)
+const showOld = ref(true)
+const showNewPwd1 = ref(true)
+const showNewPwd2 = ref(true)
 
-	const showTag = ref(false)
-	// 监听
-	watch(formData, (newVal, oldVal) => {
-		showTag.value = false
+const showTag = ref(false)
+// 监听
+watch(formData, (newVal, oldVal) => {
+	showTag.value = false
 
-		if (!formData.value.password) {
-			return false
-		}
-		if (!formData.value.password2) {
-			return false
-		}
+	if (!formData.value.password) {
+		return false
+	}
+	if (!formData.value.password2) {
+		return false
+	}
 
-		showTag.value = true
-	}, {
-		deep: true
-	})
+	showTag.value = true
+}, {
+	deep: true
+})
 
-	// 终于可以用了
-	onShow(() => {})
+// 终于可以用了
+onShow(() => { })
 </script>
 
 <style lang="scss">
-	.colorC {
-		color: #AFAFAF !important;
+.colorC {
+	color: #AFAFAF !important;
+}
+
+
+.passwordInp {
+	position: relative;
+
+	.pwdEye {
+		position: absolute;
+		// left: 20rpx;
+		right: 40rpx;
+		top: 50%;
 	}
-
-
-	.passwordInp {
-		position: relative;
-
-		.pwdEye {
-			position: absolute;
-			// left: 20rpx;
-			right: 40rpx;
-			top: 50%;
-		}
-	}
+}
 </style>

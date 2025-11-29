@@ -1,15 +1,15 @@
 <template>
 	<!-- <view class="wrap"
-		style="background: url(../../static/egg/bg.png) no-repeat  100%/100%;">
+		style="background: url(../../st1112atic/egg/bg-.png) no-repeat  100%/100%;">
 		 -->
-	<view style="background: url(../../static/egg/bg.png) no-repeat  100%/100%;height: 100vh;overflow: scroll;">
+	<view style="background: url(../../static/egg/bg-.png) no-repeat  100%/100%;height: 100vh;overflow: scroll;">
 		<view class="pdlr35 pt33">
 
 
 			<view class="flex between">
-				<image src="/static/actIcon/back.png" mode="widthFix" style="width: 48rpx;height: 36rpx;"
+				<image src="/static/actIcon/back-.png" mode="widthFix" style="width: 48rpx;height: 36rpx;"
 					@click="methods.back"></image>
-				<image src="/static/actIcon/record.png" mode="widthFix" style="width: 48rpx;height: 48rpx;"
+				<image src="/static/actIcon/record-.png" mode="widthFix" style="width: 48rpx;height: 48rpx;"
 					@click="goRecord"></image>
 			</view>
 			<!-- 导航栏 -->
@@ -49,7 +49,7 @@
 				</view>
 
 				<view class="" style="transform: translateX(-39rpx);">
-					<image src="../../static/egg/egg.png" mode="widthFix" style="width: 730rpx;"></image>
+					<image src="../../static/egg/egg-.png" mode="widthFix" style="width: 730rpx;"></image>
 				</view>
 
 				<view class="" style="margin-top: -120rpx;z-index: 99;height: 100rpx;"
@@ -107,7 +107,7 @@
 			</view>
 
 			<view class="rightFix center flex-direction u-text-center" @click="changePage">
-				<image src="../../static/egg/gift.png" mode="widthFix" style="width: 33rpx;height: 33rpx;"></image>
+				<image src="../../static/egg/gift-.png" mode="widthFix" style="width: 33rpx;height: 33rpx;"></image>
 				<view class="mt12" style="max-width: 100rpx;">
 					{{t('act.e_e10')}}
 				</view>
@@ -125,14 +125,14 @@
 
 					<view class="center " :class="isOpenEgg?'mt110':'mt90'">
 						<view class="center f28"
-							style="background: url('../../static/egg/maskBtn.png') no-repeat 100%/100%;width: 185rpx;height: 185rpx;padding: 54rpx 59rpx 56rpx 61rpx;">
+							style="background: url('../../static/egg/maskBtn-.png') no-repeat 100%/100%;width: 185rpx;height: 185rpx;padding: 54rpx 59rpx 56rpx 61rpx;">
 							<view v-if="isOpenEgg" @click="closeMaskHandle">{{t('all.a_c1')}}</view>
 							<view v-else @click="closeMaskHandle" class="f12 u-text-center">{{t('act.e_e14')}}</view>
 						</view>
 					</view>
 				</view>
 				<view class="mt40" @click="closeMaskHandle">
-					<image src="/static/closeBtn.png" mode="widthFix" style="width: 80rpx;height: 80rpx;"></image>
+					<image src="/static/closeBtn-.png" mode="widthFix" style="width: 80rpx;height: 80rpx;"></image>
 				</view>
 			</view>
 		</view>
@@ -332,7 +332,7 @@
 			width: 574rpx;
 			height: 635rpx;
 			margin-top: -250rpx;
-			background: url('../../static/egg/mask.png') no-repeat 100%/100%;
+			background: url('../../static/egg/mask-.png') no-repeat 100%/100%;
 			padding: 91rpx 50rpx 0 50rpx;
 			// align-items: center;
 			font-size: 40rpx;
@@ -363,7 +363,7 @@
 		height: 326rpx;
 		background-color: #fff;
 		border-radius: 20rpx;
-		// background: url('../../static/egg/box.png') no-repeat 100%/100%;
+		// background: url('../../static/egg/box-.png') no-repeat 100%/100%;
 		padding: 20rpx 24rpx 40rpx 22rpx;
 		border: 20rpx solid #F85050;
 		color: #F85050;

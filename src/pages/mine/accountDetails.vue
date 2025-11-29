@@ -1,4 +1,5 @@
 <template>
+	<!-- mine.m_a1')}} -->
 	<view :style="store.$state.imgObj.loginBg">
 		<view class="between topNavBar">
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"

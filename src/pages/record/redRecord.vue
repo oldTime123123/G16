@@ -1,14 +1,15 @@
 <template>
+	<!-- :refresher-enabled="false" :to-bottom-loading-more-e -->
 	<view
-		style="height: calc(100vh ) !important;overflow: hidden;background: url('static/actIcon/redElove/listBg1.png') no-repeat 100%/100%;">
+		style="height: calc(100vh ) !important;overflow: hidden;background: url('static/actIcon/redElove/listBg1-.png') no-repeat 100%/100%;">
 		<view class="between topNavBar">
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
 				@click="methods.back"></image>
 			<view>
-				{{t('act.r_r1')}}
+				{{ t('act.r_r1') }}
 			</view>
 			<view class="center" style="width: 50rpx;height: 50rpx;">
-		
+
 			</view>
 		</view>
 		<view class="pdlr35 pt33">
@@ -22,14 +23,14 @@
 					style="margin: 250rpx auto 0;width: 100%;  ">
 					<view class="listItem" v-for="(item, index) in recordsList" :key="index">
 						<view class="vvItem">
-							<view class="f26">{{t('act.r_r5')}}</view>
-							<view class="" :style="{color:store.$state.contentColor}">
-								{{item.price}} {{currency}}
+							<view class="f26">{{ t('act.r_r5') }}</view>
+							<view class="" :style="{ color: store.$state.contentColor }">
+								{{ item.price }} {{ currency }}
 							</view>
 						</view>
 						<view class="vvItem">
-							<view class="f26">{{t('act.r_r6')}}</view>
-							<view class="" :style="{color:store.$state.contentColor}">
+							<view class="f26">{{ t('act.r_r6') }}</view>
+							<view class="" :style="{ color: store.$state.contentColor }">
 								{{ item.createTime }}
 							</view>
 						</view>
@@ -41,58 +42,56 @@
 </template>
 
 <script setup>
-	import {request} from '../../../comm/request.ts';
-	import {
-		userStore
-	} from "@/store/themeNum.js";
-	// import {
-	// 	Toast
-	// } from '@nutui/nutui';
-	import {
-		onShow,
-		onLoad
-	} from "@dcloudio/uni-app";
-	import {
-		getStorageSync
-	} from '@dcloudio/uni-h5';
-	const store = userStore();
-	import {
-		useI18n
-	} from 'vue-i18n'
+import { request } from '../../../comm/request.ts';
+import {
+	userStore
+} from "@/store/themeNum.js";
+// import {
+// 	Toast
+// } from '@nutui/nutui';
+import {
+	onShow,
+	onLoad
+} from "@dcloudio/uni-app";
+import {
+	getStorageSync
+} from '@dcloudio/uni-h5';
+const store = userStore();
+import {
+	useI18n
+} from 'vue-i18n'
 
-	const {
-		t
-	} = useI18n()
-	const methods = {
-		back() {
-			history.back()
-		},
+const {
+	t
+} = useI18n()
+const methods = {
+	back() {
+		history.back()
+	},
 
-	};
-	const recordsList = ref([])
-	const paging = ref(null)
-	const pages = ref({
-		page: 1,
-		size: 10
+};
+const recordsList = ref([])
+const paging = ref(null)
+const pages = ref({
+	page: 1,
+	size: 10
+})
+const getData = (page) => {
+	pages.value.page = page
+	request({
+		methods: 'get',
+		url: 'activity/prizePackage/log',
+		data: pages.value
+	}).then(res => {
+		paging.value.complete(res.data);
+		pages.value.page += 1
 	})
-	const getData = (page) => {
-		pages.value.page = page
-		request({
-			methods: 'get',
-			url: 'activity/prizePackage/log',
-			data: pages.value
-		}).then(res => {
-			paging.value.complete(res.data);
-			pages.value.page += 1
-		})
-	}
-	const currency = ref("")
-	// 终于可以用了
-	onLoad(() => {
-		currency.value = uni.getStorageSync('currency')
-	})
+}
+const currency = ref("")
+// 终于可以用了
+onLoad(() => {
+	currency.value = uni.getStorageSync('currency')
+})
 </script>
 
-<style lang="scss">
-	
-</style>
+<style lang="scss"></style>

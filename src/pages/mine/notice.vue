@@ -1,4 +1,5 @@
 <template>
+	<!-- e="store.$state.imgObj.loginBg"> -->
 	<view :style="store.$state.imgObj.loginBg">
 	<view class="between topNavBar">
 					<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
@@ -18,11 +19,11 @@
 					<view class="">
 						<view>
 							<nut-badge dot top="4" right="4" v-if="item.status ==0">
-								<image src="/static/notice.png" mode="widthFix"
+								<image src="/static/notice-.png" mode="widthFix"
 									style="width: 78rpx;height: 78rpx;"></image>
 							</nut-badge>
 
-							<image src="/static/notice.png" v-else mode="widthFix"
+							<image src="/static/notice-.png" v-else mode="widthFix"
 								style="width: 78rpx;height: 78rpx;"></image>
 						</view>
 					</view>

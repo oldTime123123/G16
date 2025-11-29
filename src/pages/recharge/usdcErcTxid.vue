@@ -1,4 +1,5 @@
 <template>
+	<!-- ="pdlr35 pt33" :style="{color -->
 	<view :style="store.$state.imgObj.loginBg">
 
 		<view class="between topNavBar">

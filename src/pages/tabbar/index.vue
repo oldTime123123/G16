@@ -1,11 +1,12 @@
 <template>
+	<!-- <view class="show2line">{{ $t('x.a4')  -->
 	<view class="indexPage">
 		<view class="topBox">
 			<view class="topNav between">
-				<image src="/static/themeNum1/index/pd.png?1" mode="widthFix" class="topImg"
+				<image src="/static/themeNum1/index/pd-.png?1" mode="widthFix" class="topImg"
 					@click="changePage(1, '/pages/mine/service')"></image>
-				<image src="/static/themeNum1/index/title.png" mode="widthFix" style="width: 100rpx;"></image>
-				<image src="/static/themeNum1/index/ls.png?1" mode="widthFix" class="topImg"
+				<image src="/static/themeNum1/index/title-.png" mode="widthFix" style="width: 100rpx;"></image>
+				<image src="/static/themeNum1/index/ls-.png?1" mode="widthFix" class="topImg"
 					@click="changePage(1, '/pages/mine/langSetting')"></image>
 			</view>
 			<view class="mt20 " style="position: relative;">
@@ -48,7 +49,7 @@
 						</view>
 
 						<view>
-							<image src="/static/themeNum1/icon/i_r.png" mode="widthFix" style="width: 60rpx;"></image>
+							<image src="/static/themeNum1/icon/i_r-.png" mode="widthFix" style="width: 60rpx;"></image>
 						</view>
 					</view>
 				</view>
@@ -60,7 +61,7 @@
 						</view>
 
 						<view>
-							<image src="/static/themeNum1/icon/i_r.png" mode="widthFix" style="width: 60rpx;"></image>
+							<image src="/static/themeNum1/icon/i_r-.png" mode="widthFix" style="width: 60rpx;"></image>
 						</view>
 					</view>
 				</view>
@@ -82,7 +83,7 @@
 				<view class="goodsItem" v-for="(item, index) in goodsList" :key="index" @click="goTaskList(item)">
 					<view class="flex col_center ">
 						<view class="center">
-							<image src="/static/vip/vip.png" style="width: 50rpx;height: 50rpx;" class="bbo10"></image>
+							<image src="/static/vip/vip-.png" style="width: 50rpx;height: 50rpx;" class="bbo10"></image>
 						</view>
 						<view class="ml10 f36 textHiddenOne">
 							{{ item.name }}
@@ -127,7 +128,7 @@
 						:class="!showMask ? 'animate__animated animate__fadeInUp' : ''" v-if="item.is_active == 0">
 						<view class="center flex-col "
 							:class="!showMask ? ' animate__animated animate__backInDown   ' : ''">
-							<image src="../../static/themeNum1/index/locked.png" mode="widthFix"
+							<image src="../../static/themeNum1/index/locked-.png" mode="widthFix"
 								style="width: 77rpx;height: 77rpx;"></image>
 							<!-- <view class="f40 mt23" style="color: #fff;"> {{t('index.i_a2')}}</view> -->
 						</view>
@@ -149,7 +150,8 @@
 							t('index.i_a3')
 						}}
 						</view>
-						<view class="show1line" :class="recordActInd == '1' ? 'actRecordR' : ''" @click="recordActInd = 1">{{t('x.n4')}}
+						<view class="show1line" :class="recordActInd == '1' ? 'actRecordR' : ''"
+							@click="recordActInd = 1">{{ t('x.n4') }}
 						</view>
 					</view>
 				</view>
@@ -195,15 +197,15 @@
 
 				<view class="botInfo between">
 					<view class="center">
-						<image src="/static/themeNum1/index/b_l1.png" mode=" widthFix"
+						<image src="/static/themeNum1/index/b_l1-.png" mode=" widthFix"
 							style="width: 160rpx;height: 160rpx;"></image>
 					</view>
 					<view class="center">
-						<image src="/static/themeNum1/index/b_l2.png" mode=" widthFix"
+						<image src="/static/themeNum1/index/b_l2-.png" mode=" widthFix"
 							style="width: 200rpx;height: 70rpx;"></image>
 					</view>
 					<view class="center">
-						<image src="/static/themeNum1/index/b_l3.png" mode=" widthFix"
+						<image src="/static/themeNum1/index/b_l3-.png" mode=" widthFix"
 							style="width: 160rpx;height: 160rpx;"></image>
 					</view>
 				</view>
@@ -438,22 +440,22 @@ const botHandle = (type, item) => {
 
 const commList = ref([{
 	name: t('wr.r_r1'),
-	icon: "/static/themeNum1/index/icon1.png",
+	icon: "/static/themeNum1/index/icon1-.png",
 	url: './recharge'
 },
 {
 	name: t('wr.w_a1'),
-	icon: "/static/themeNum1/index/icon2.png",
+	icon: "/static/themeNum1/index/icon2-.png",
 	url: '../mine/withdraw'
 },
 {
 	name: t('x.n1'),
-	icon: "/static/themeNum1/index/icon3.png",
+	icon: "/static/themeNum1/index/icon3-.png",
 	url: '../mine/article?id=2'
 },
 {
 	name: t('x.n2'),
-	icon: "/static/themeNum1/index/icon4.png",
+	icon: "/static/themeNum1/index/icon4-.png",
 	url: 'down'
 },
 ])
@@ -547,6 +549,7 @@ onLoad((e) => {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
 .show2line {
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
@@ -554,6 +557,7 @@ onLoad((e) => {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
 .honerItem {
 	color: #610B00;
 
@@ -606,7 +610,7 @@ onLoad((e) => {
 
 		.actRecordW,
 		.actRecordR {
-			// background: url('/static/vip/rcW.png') no-repeat;
+			// background: url('/static/vip/rcW-.png') no-repeat;
 			background: #FFFFFF;
 			box-shadow: 0px 4px 4px 0px rgba(249, 37, 0, 0.5);
 			border-radius: 17px 17px 17px 17px;
@@ -638,13 +642,13 @@ onLoad((e) => {
 
 .lgBoxEl {
 	.lgImg:nth-child(1) {
-		background: url('/static/themeNum1/icon/lg1.png') no-repeat;
+		background: url('/static/themeNum1/icon/lg1-.png') no-repeat;
 		background-size: contain;
 
 	}
 
 	.lgImg:nth-child(2) {
-		background: url('/static/themeNum1/icon/lg2.png') no-repeat;
+		background: url('/static/themeNum1/icon/lg2-.png') no-repeat;
 		background-size: contain;
 	}
 
@@ -733,7 +737,7 @@ onLoad((e) => {
 	padding: 10rpx 30rpx 50rpx;
 	position: relative;
 	color: #610B00;
-	background: url('/static/vip/vipBg.png?2') no-repeat;
+	background: url('/static/vip/vipBg-.png?2') no-repeat;
 	background-position: top;
 	background-size: contain;
 	margin-bottom: 40rpx;

@@ -1,6 +1,6 @@
 <template>
 	<!-- <view class="wrap"
-		style="background: url(../../static/egg/bg.png) no-repeat  100%/100%;">
+		style="background: url(../../static/egg/bg-.png) no-repeat  100%/100%;">
 		 -->
 	<view class="pageBg">
 		<view class="pt30 pl30">
@@ -101,7 +101,7 @@
 <style lang="scss" scoped>
 	.pageBg {
 		min-height: 100vh;
-		background: url('../../static/linkEgg/eggBg.png') no-repeat 100%/100%;
+		background: url('../../static/linkEgg/eggBg-.png') no-repeat 100%/100%;
 	}
 
 	.title {
@@ -114,7 +114,7 @@
 	}
 
 	.money {
-		background: url('../../static/linkEgg/egg.png') no-repeat 100%/100%;
+		background: url('../../static/linkEgg/egg-.png') no-repeat 100%/100%;
 		height: 250rpx;
 		width: 250rpx;
 		font-size: 42rpx;

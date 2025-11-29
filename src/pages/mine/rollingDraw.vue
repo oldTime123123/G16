@@ -1,4 +1,5 @@
 <template>
+	<!-- ass="between topNavBar"> -->
 	<view class="warp" style="">
 
 		<view class="between topNavBar">
@@ -8,7 +9,7 @@
 				{{t('act.d_s1')}}
 			</view>
 			<view class="center" style="width: 50rpx;height: 50rpx;">
-				<image src="/static/record.png"
+				<image src="/static/record-.png"
 					style="width: 48rpx;height: 48rpx;" @click="changePage"></image>
 			</view>
 		</view>
@@ -18,7 +19,7 @@
 				<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"
 					@click="methods.back"></image>
 
-				<image src="../../static/actIcon/sign/signRecord.png" mode="widthFix"
+				<image src="../../static/actIcon/sign/signRecord-.png" mode="widthFix"
 					style="width: 48rpx;height: 48rpx;" @click="changePage"></image>
 			</view> -->
 			<view class="f50 mt60 text_bold" :style="{color:store.$state.secondColor}">{{t('act.d_s1')}}</view>
@@ -102,14 +103,14 @@
 			pageData.value.num > 0 ? (canuse.value = true) : (canuse.value = false);
 			AwardList.value = res.lottery.gift
 			let tempObj = {
-				cover: "/upload/image/20220914/a1c80601be0cad21e5ee29a6b923eaac.jpg",
-				full_cover: "https://api.bsppy88.top/upload/image/20220914/a1c80601be0cad21e5ee29a6b923eaac.jpg",
+				cover: "/upload/image/20220914/a1c80601be0cad21e5ee29a6b923eaac-.png",
+				full_cover: "https://api.bsppy88.top/upload/image/20220914/a1c80601be0cad21e5ee29a6b923eaac-.png",
 				id: 10,
 				lotteryId: 1,
 			}
 			let tempObj1 = {
-				cover: "/upload/image/20220914/a1c80601be0cad21e5ee29a6b923eaac.jpg",
-				full_cover: "https://api.bsppy88.top/upload/image/20220914/a1c80601be0cad21e5ee29a6b923eaac.jpg",
+				cover: "/upload/image/20220914/a1c80601be0cad21e5ee29a6b923eaac-.png",
+				full_cover: "https://api.bsppy88.top/upload/image/20220914/a1c80601be0cad21e5ee29a6b923eaac-.png",
 				id: 19,
 				lotteryId: 1,
 			}
@@ -196,7 +197,7 @@
 	}
 
 	.warp {
-		background: url('/static/actIcon/zhuanpan1/lottery.png') no-repeat 100%;
+		background: url('/static/actIcon/zhuanpan1/lottery-.png') no-repeat 100%;
 		height: 100vh;
 		// overflow: scroll;
 		width: 100vw;

@@ -1,4 +1,7 @@
 <template>
+	<!-- ew class="kefuItem flex col_center" v-for="item in serviceList" @click="changePage(item)">
+					<image :src="item.avatar" mode="widthFix" style="width: 80rpx;height: 80rpx;border-radius: 10rpx;"></image>
+					<view class="mglr40 f34"> -->
 	<view  style="height: calc(100vh) !important;overflow: hidden;">
 	<view class="between topNavBar">
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"

@@ -1,4 +1,5 @@
 <template>
+	<!-- @click="methods.b -->
 	<view  class="indexPage">
 		<view class="between topNavBar">
 			<image :src="store.$state.imgObj.backIcon" mode="widthFix" style="width: 48rpx;height: 36rpx;"

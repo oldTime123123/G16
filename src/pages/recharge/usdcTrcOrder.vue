@@ -1,4 +1,5 @@
 <template>
+	<!-- ew :style="topItemStyle">{{ -->
 	<view :style="store.$state.imgObj.loginBg">
 	
 	

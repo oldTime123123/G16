@@ -70,8 +70,8 @@
 
 <style lang="scss">
 	.indexPage {
-		background-image: url('/static/themeNum1/index/topBg.png?v1');
-		// background: url('/static/vip/bk.png') no-repeat;
+		background-image: url('/static/themeNum1/index/topBg-.png?v1');
+		// background: url('/static/vip/bk-.png') no-repeat;
 		background-repeat: no-repeat;
 		background-size: contain;
 		min-height: 100vh;

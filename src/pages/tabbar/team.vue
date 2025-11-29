@@ -1,11 +1,12 @@
 <template>
+	<!-- nut-icon name="close" size="14"></nut-icon> -->
 	<view class="teamPage indexPage">
 
 		<view class="colorfff f40 text_bold center" style="height:100rpx">
 			<view class="textUpper">{{ $t('x.a12') }}</view>
 		</view>
 		<view class="pdlr25  botContent">
-			<image src="../../static/team/teamTop.png" mode="widthFix" style="width: 100%;"></image>
+			<image src="../../static/team/teamTop-.png" mode="widthFix" style="width: 100%;"></image>
 			<!-- <view class="f48 text_bold colorfff">{{t('x.t1')}} </view> -->
 			<!-- <view class="topSearch">
 				<view class="flex mt40" v-if="!pages.start">
@@ -72,13 +73,13 @@
 					<view class="pdlr20 mgtb10 ">
 						<view class="teamItem  between">
 							<view class="flex col_center">
-								<image src="../../static/team/t_ico.png" mode="widthFix"
+								<image src="../../static/team/t_ico-.png" mode="widthFix"
 									style="width: 50rpx;height: 50rpx;"></image>
 								<span class="ml10">{{ t('x.t4') }}</span>
 							</view>
 							<view class="flex col_center">
 								<span class="value f34">{{ item.size }}</span>
-								<image src="../../static/team/right.png" class="ml20" mode="widthFix"
+								<image src="../../static/team/right-.png" class="ml20" mode="widthFix"
 									style="width: 40rpx;" @click="changePage(`/pages/mine/team?level=${index + 1}`)">
 								</image>
 
@@ -100,7 +101,7 @@
 
 					<view class="copyBtn  flex " @click="copyHandle(inviteCode)">
 						<view style="line-height: 120rpx;">
-							<image src="/static/team/linkIcon.png" mode="widthFix" style="width: 50rpx;"></image>
+							<image src="/static/team/linkIcon-.png" mode="widthFix" style="width: 50rpx;"></image>
 						</view>
 						<view class="ml10  text_bold">
 							{{ t('x.t6') }}
@@ -246,7 +247,7 @@ onLoad(() => {
 
 <style lang="scss" scoped>
 .linkBox {
-	background: url('/static/team/linkBox.png') no-repeat;
+	background: url('/static/team/linkBox-.png') no-repeat;
 	background-size: contain;
 	height: 470rpx;
 	margin-top: 50rpx;
@@ -279,7 +280,7 @@ onLoad(() => {
 		text-align: center;
 		justify-content: center;
 		color: #fff;
-		background: url('/static/team/linkBtn.png') no-repeat;
+		background: url('/static/team/linkBtn-.png') no-repeat;
 		background-size: cover;
 		height: 120rpx;
 		line-height: 100rpx;
@@ -299,7 +300,7 @@ onLoad(() => {
 	padding-bottom: 20rpx;
 
 	.teamTitle {
-		background: url('/static/team/t_title.png') no-repeat;
+		background: url('/static/team/t_title-.png') no-repeat;
 		background-size: contain;
 		background-position: center;
 		text-align: center;
@@ -350,7 +351,7 @@ onLoad(() => {
 
 .teamTopPort {
 	// background: linear-gradient( 180deg, #FFE863 0%, #FF9A35 100%);
-	background: url('/static/team/teamRe.png') no-repeat;
+	background: url('/static/team/teamRe-.png') no-repeat;
 	// background-size: contain;
 	background-size: contain;
 	margin-top: 50rpx;
@@ -411,7 +412,7 @@ onLoad(() => {
 }
 
 // .teamPage {
-// 	background: url('/static/team/teamBg.png') no-repeat;
+// 	background: url('/static/team/teamBg-.png') no-repeat;
 // 	background-size: contain;
 // 	background-position: top;
 // 	min-height: 100vh;

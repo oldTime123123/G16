@@ -1,4 +1,9 @@
 <template>
+<!-- <view :style="store.$state.imgObj.loginBg2">
+
+		<view class="pdlr35 pt33">
+
+			<view class="flex between">' -->
 	<view :style="store.$state.imgObj.loginBg2">
 
 		<view class="pdlr35 pt33">
@@ -18,7 +23,7 @@
 				<!-- 登录 -->
 				<view class="mt173 loginBox ">
 					<view class="logoIcon center">
-						<image src="/static/webIco.png" mode="widthFix" style="width: 300rpx;height: 300rpx;"></image>
+						<image src="/static/webIco-.png" mode="widthFix" style="width: 300rpx;height: 300rpx;"></image>
 					</view>
 					<view class="f50  text_bold text_center" :style="{color:store.$state.thirdColor}">
 						{{t('login.l_l1')}}
@@ -30,7 +35,7 @@
 						<view class="  center" @click="showPicker = true" style="color: #000; ">
 							{{country_code.country_code}}
 							<view class="ml10 center" style="width: 40rpx;">
-								<image src="../../static/themeNum1/icon/downSel.png"
+								<image src="../../static/themeNum1/icon/downSel-.png"
 									style="width: 40rpx;height: 40rpx;"></image>
 							</view>
 						</view>
@@ -48,10 +53,10 @@
 							<input class="loginInp" type="safe-password" password="true" v-model="loginForm.password"
 								:placeholder="t('login.l_l5')" v-if="openCpwd">
 							<input class="loginInp" v-model="loginForm.password" :placeholder="t('login.l_l5')" v-else>
-							<image src="../../static/themeNum1/icon/openEye.png" class="pwdEye"
+							<image src="../../static/themeNum1/icon/openEye-.png" class="pwdEye"
 								style="width: 50rpx;height: 50rpx;" @click="openCpwd = !openCpwd" v-if="!openCpwd">
 							</image>
-							<image src="../../static/themeNum1/icon/closeEye.png" class="pwdEye"
+							<image src="../../static/themeNum1/icon/closeEye-.png" class="pwdEye"
 								style="width: 50rpx;height: 50rpx;" @click="openCpwd = !openCpwd" v-else>
 							</image>
 						</view>
@@ -67,7 +72,7 @@
 				<view class="loginBtn f38 " @click="methods.loginHandle">
 					{{t('login.l_l6')}}
 
-					<image src="/static/themeNum1/right.png" class="ml20" mode="widthFix" style="width: 60rpx;"></image>
+					<image src="/static/themeNum1/right-.png" class="ml20" mode="widthFix" style="width: 60rpx;"></image>
 				</view>
 				<view class="text_center mt34 f26 pb10 " @click="methods.changePage('./register')">
 					{{t('login.l_l7')}} <text class="pb5" :style="{color:'#FFB310'} "
@@ -383,7 +388,7 @@
 	}
 
 	.loginBtn {
-		background: url('../../static/themeNum1/btnBg.png') no-repeat;
+		background: url('../../static/themeNum1/btnBg-.png') no-repeat;
 		background-size: 100%;
 		width: 65%;
 		height: 150rpx;

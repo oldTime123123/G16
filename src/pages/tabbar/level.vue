@@ -1,4 +1,5 @@
 <template>
+	<!-- class="mt10 f28 text_bold">{{ item.bonus + ' ' +  -->
 	<view class="indexPage">
 		<view class="colorfff f40 text_bold center" style="height:100rpx">
 			<view class="textUpper">{{ $t('x.a9') }}</view>
@@ -11,7 +12,7 @@
 				<view class="goodsItem" v-for="(item, index) in goodsList" :key="index" @click="goTaskList(item)">
 					<view class="flex col_center ">
 						<view class="center">
-							<image src="/static/vip/vip.png" style="width: 50rpx;height: 50rpx;" class="bbo10"></image>
+							<image src="/static/vip/vip-.png" style="width: 50rpx;height: 50rpx;" class="bbo10"></image>
 						</view>
 						<view class="ml10 f36 textHiddenOne">
 							{{ item.name }}
@@ -55,7 +56,7 @@
 					<view class="goodsMask center flex-col" :class="'animate__animated animate__fadeInUp'"
 						v-if="item.is_active == 0">
 						<view class="center flex-col " :class="' animate__animated animate__backInDown   '">
-							<image src="../../static/themeNum1/index/locked.png" mode="widthFix"
+							<image src="../../static/themeNum1/index/locked-.png" mode="widthFix"
 								style="width: 77rpx;height: 77rpx;"></image>
 							<!-- <view class="f40 mt23" style="color: #fff;"> {{t('index.i_a2')}}</view> -->
 						</view>
@@ -176,7 +177,7 @@ onLoad((e) => {
 	padding: 10rpx 30rpx 40rpx;
 	position: relative;
 	color: #610B00;
-	background: url('/static/vip/vipBg.png?1') no-repeat;
+	background: url('/static/vip/vipBg-.png?1') no-repeat;
 	background-position: top;
 	background-size: cover;
 	margin-bottom: 40rpx;

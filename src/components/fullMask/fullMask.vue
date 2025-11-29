@@ -28,7 +28,7 @@
 				<!--  -->
 			</view>
 			<view class="mask_btns center">
-				<image src="../../static/closeBtn.png" class="mask_btns" mode="widthFix"
+				<image src="../../static/closeBtn-.png" class="mask_btns" mode="widthFix"
 					style="width: 80rpx;height: 80rpx;" @click="confirmHandle"></image>
 				<!-- <view class="mask_button mask_confirm" @click="confirmHandle" :style="{background:store.$state.contentColor}">{{t('all.a_c1')}}</view> -->
 			</view>
