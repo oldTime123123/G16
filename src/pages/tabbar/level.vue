@@ -133,7 +133,19 @@ const goTaskList = (item) => {
 	// 	url: '../task/taskList'
 	// })
 }
+
+
+const currency = ref("")
 const getData = () => {
+	// 货币
+	request({
+		url: 'setting/currency',
+		methods: 'get'
+	}).then(res => {
+		currency.value = res.currency
+		uni.setStorageSync('currency', res.currency)
+	})
+
 	request({
 		url: 'home/vipListNew',
 		methods: 'get'
@@ -142,11 +154,8 @@ const getData = () => {
 	})
 }
 
-const currency = localStorage.getItem('currency')
 // 终于可以用了
 onLoad((e) => {
-
-
 	getData()
 })
 </script>
